@@ -1,0 +1,24 @@
+
+1. Lists:
+   - Mutable: Elements can be modified after creation.
+   - Ordered: Elements are stored in the order they were added.
+   - Allows duplicates: You can have duplicate elements in a list.
+   - Syntax: Created using square brackets `[]`.
+
+2. Tuples:
+   - Immutable: Elements cannot be changed after creation.
+   - Ordered: Elements are stored in the order they were added.
+   - Allows duplicates: You can have duplicate elements in a tuple.
+   - Syntax: Created using parentheses `()`.
+
+3. Dictionaries:
+   - Mutable: Key-value pairs can be modified after creation.
+   - Unordered: Elements are not stored in a specific order.
+   - Keys are unique: Each key in a dictionary must be unique.
+   - Syntax: Created using curly braces `{}` with key-value pairs separated by colons `:`.
+
+4. Sets:
+   - Mutable: Elements of a set can be added or removed after creation.
+   - Unordered: Elements are not stored in a specific order.
+   - No duplicates: Sets cannot contain duplicate elements.
+   - Syntax: Created using curly braces `{}` or the `set()` function.

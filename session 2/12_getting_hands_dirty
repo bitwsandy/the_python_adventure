@@ -1,0 +1,43 @@
+1. List Study Drills:
+   - Create a list of your favorite movies and perform the following operations:
+     - Append a new movie to the list.
+     - Remove a movie from the list.
+     - Access the second and third movies in the list.
+     - Find the length of the list.
+   - Explore list comprehension by creating a new list of squared numbers from 1 to 10.
+     - List comprehension is a concise and efficient way of creating lists in Python.
+     - It provides a compact syntax for generating lists based on existing iterables like
+       lists, tuples, strings, or ranges.
+     - The general syntax of list comprehension is:
+            new_list = [expression for item in iterable if condition]
+     - Example 1 : Using list comprehension to generate a list of squares of numbers from 0 to 9
+            squares = [x**2 for x in range(10)]
+            print(squares)
+     - Example 2 : Using list comprehension with a conditional to generate a list of even numbers from 0 to 9
+            even_numbers = [x for x in range(10) if x % 2 == 0]
+            print(even_numbers)
+
+
+
+
+
+2. Tuple Study Drills:
+   - Create a tuple representing the RGB values of a color and perform the following operations:
+     - Access the red component of the color.
+     - Attempt to modify one of the RGB values (observe the error).
+   - Create a tuple of your personal information (name, age, city) and practice unpacking it into separate variables.
+
+3. Dictionary Study Drills:
+   - Create a dictionary of your favorite books and perform the following operations:
+     - Add a new book to the dictionary.
+     - Remove a book from the dictionary.
+     - Access the author of a specific book.
+     - Check if a certain book exists in the dictionary.
+   - Iterate over the dictionary and print out each key-value pair.
+
+4. Set Study Drills:
+   - Create two sets representing your hobbies and your friend's hobbies and perform the following operations:
+     - Find the union of the two sets (hobbies shared by both).
+     - Find the intersection of the two sets (hobbies common to both).
+     - Find the difference between the two sets (hobbies unique to each person).
+   - Convert a list of duplicate numbers into a set to remove duplicates and observe the difference.
