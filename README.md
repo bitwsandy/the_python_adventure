@@ -1,4 +1,4 @@
-# Fun Python Exercises
+# The Python Adventure
 
 Welcome to Fun Python Exercises, a collection of interactive and interesting exercises designed to help you learn Python in a fun and engaging way!
 
