@@ -5,6 +5,7 @@
 
 
 input_string = input("Enter a string: ")
+# "hello everyone, let's code at 7:00PM"
 vowels = 'aeiou'
 vowel_count = sum(1 for char in input_string.lower() if char in vowels)
 consonant_count = sum(1 for char in input_string.lower() if char.isalpha() and char not in vowels)

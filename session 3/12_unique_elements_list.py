@@ -6,6 +6,9 @@ for element in original_list:
         unique_elements.append(element)
 print("Unique elements:", unique_elements)
 
+# original_set = set(original_list)
+# unique_elements = list(original_set)
+
 
 
 #`unique_elements = []`:

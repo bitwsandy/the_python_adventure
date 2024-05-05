@@ -1,12 +1,5 @@
-# Initialize demo_dict with 'engineer' as key and a list containing 'Alice' as value
-demo_dict = {'engineer': ['Alice']}
+original_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+keys_to_keep = ['a', 'c', 'e']
+filtered_dict = {key: value for key, value in original_dict.items() if key in keys_to_keep}
+print("Filtered dictionary:", filtered_dict)
 
-# Initialize demo_dict_2 with 'engineer' as key and a list containing 'Bob' as value
-demo_dict_2 = {'engineer': ['Bob']}
-
-# Append 'Alice' to the list associated with the key 'engineer' in demo_dict_2
-demo_dict_2['engineer'].append('Alice')
-
-# Print the dictionaries
-print(demo_dict)
-print(demo_dict_2)

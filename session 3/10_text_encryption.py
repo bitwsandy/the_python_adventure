@@ -9,6 +9,7 @@ key = int(input("Enter an encryption key (integer): "))
 
 encrypted_text = ''
 for char in text:
+    # hello
     if char.isalpha():
         shift = ord('a') if char.islower() else ord('A')
         encrypted_char = chr((ord(char) - shift + key) % 26 + shift)
