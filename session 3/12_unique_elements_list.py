@@ -5,3 +5,16 @@ for element in original_list:
     if element not in unique_elements:
         unique_elements.append(element)
 print("Unique elements:", unique_elements)
+
+
+
+#`unique_elements = []`:
+#       Initializes an empty list to store unique elements.
+#
+#`for element in original_list:`:
+#       Iterates over each element `element` in the `original_list`.
+#
+#`if element not in unique_elements:`:
+#       Checks if the current element is not already in the `unique_elements` list.
+#       - If the element is not in the list, it means it's unique,
+#         so it appends it to the `unique_elements` list.
