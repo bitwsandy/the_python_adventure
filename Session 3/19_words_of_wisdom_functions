@@ -1,0 +1,113 @@
+## Understanding Python Functions
+
+## What are Functions?
+- Functions are blocks of organized, reusable code used to perform a single,
+  related action.
+- They provide a way to break down large programs into smaller, manageable parts.
+- Functions promote code reuse and make code more modular and easier to understand.
+
+
+## Creating Functions
+- Functions are defined using the `def` keyword followed by the function name
+  and parentheses containing any parameters.
+- The function body is indented and contains the code to be executed
+  when the function is called.
+- Functions may or may not have parameters, which are values
+  passed to the function when it is called.
+- Example :
+                def add_numbers(a, b):
+                    return a + b
+
+## Calling Functions
+- To execute a function, you "call" it by using its name followed by
+  parentheses containing any arguments (if required).
+- When a function is called, the code inside the function is executed,
+  and it may return a value back to the caller.
+- Example :
+    # Call the function with arguments 3 and 4
+                result = add_numbers(3, 4)
+                print("Result:", result)  # Output: Result: 7
+
+## Return Values
+- Functions can optionally return a value using the `return` statement.
+- If the `return` statement is omitted, the function returns `None` by default.
+- The return value of a function can be assigned to a variable or
+  used directly in expressions.
+- Example :
+            def multiply(a, b):
+                # Multiply two numbers and return the result.
+                return a * b
+
+            # Call the function and store the result in a variable
+            result = multiply(3, 4)
+            print("Result:", result)  # Output: Result: 12
+
+
+## Function Parameters
+- Functions can accept parameters, which are placeholders for values passed
+  to the function when it is called.
+- Parameters are specified within the parentheses in the function definition.
+- Parameters can have default values, which are used if no argument is provided
+  when the function is called.
+- Example :
+            def greet(name):
+                # Greets the person with the given name.
+                print("Hello,", name, "!")
+
+            # Call the function with an argument
+            greet("Alice")  # Output: Hello, Alice !
+
+            In this example:
+            - The `greet` function takes one parameter `name`,
+              which represents the name of the person to greet.
+            - When the function is called with the argument `"Alice"`,
+              the value `"Alice"` is passed to the `name` parameter.
+            - Inside the function, the parameter `name` is used to customize the greeting message.
+            - The function prints out the greeting message, including the name provided
+              as an argument.
+
+
+## Scope of Variables
+- Variables defined inside a function are local to that function and
+  cannot be accessed from outside the function.
+- Variables defined outside any function (global variables) can be accessed
+  from within functions, but their values cannot be modified
+  unless explicitly declared as global within the function.
+- Example :
+
+            # Global variable
+            global_var = 10
+
+            def my_function():
+                # Local variable
+                local_var = 20
+                print("Inside the function - local_var:", local_var)
+                print("Inside the function - global_var:", global_var)
+
+            # Call the function
+            my_function()
+
+            # Try to access local_var outside the function
+            # This will result in a NameError because local_var is not defined in this scope
+            # print("Outside the function - local_var:", local_var)
+
+            # Access global_var outside the function
+            print("Outside the function - global_var:", global_var)
+
+
+            In this program:
+            - `global_var` is a global variable defined outside any function.
+              It can be accessed from anywhere within the program.
+            - `my_function()` defines a local variable `local_var` inside the function.
+              This variable is only accessible within the function, making it local in scope.
+            - Inside the function, both `local_var` and `global_var` are printed,
+              demonstrating access to both local and global variables within the function.
+            - Outside the function, `global_var` is accessible and printed without any issue.
+            - Attempting to access `local_var` outside the function results in a
+              `NameError` because `local_var` is not defined in the global scope.
+
+## Summary:
+- Functions are essential building blocks in Python programming.
+- They help organize code, promote reuse, and make programs easier to understand.
+- Understanding how to define functions, pass parameters, and handle return values
+  is crucial for writing effective Python code.
