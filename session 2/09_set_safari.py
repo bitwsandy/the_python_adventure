@@ -3,6 +3,7 @@
 # Creating a set
 my_set = {1, 2, 3, 4, 5}
 
+
 # Adding elements to the set
 my_set.add(6)
 print("Set after adding element:", my_set)

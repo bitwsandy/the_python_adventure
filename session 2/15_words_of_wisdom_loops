@@ -53,7 +53,8 @@ In Python, there are mainly three types of loops: "for" loop, "while" loop, and 
 Key Differences:
 - For loops are used when you know the number of iterations in advance,
   such as iterating over a sequence.
-- While loops are used when you want to repeat a block of code until a condition becomes false.
+- While loops are used when you want to repeat a block of code
+  until a condition becomes false.
 - Nested loops are used when you need to perform iterations within iterations,
   such as iterating over a 2D grid or nested data structures.
 

@@ -13,12 +13,13 @@
 # F: Below 60
 
 score = int(input("Enter the student's score: "))
+# 71
 
 if score >= 90:
     print("Grade: A")
 elif score >= 80:
     print("Grade: B")
-elif score >= 70:
+elif score >= 70: #True
     print("Grade: C")
 elif score >= 60:
     print("Grade: D")

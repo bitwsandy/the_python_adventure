@@ -19,8 +19,8 @@
 # and prints each fruit.
 
 fruits = ["apple", "banana", "cherry"]
-for fruit in fruits:
-    print("For loop printer : ", fruit)
+for x in fruits:
+    print("For loop printer : ", x)
 
 index = 0
 while index < len(fruits):

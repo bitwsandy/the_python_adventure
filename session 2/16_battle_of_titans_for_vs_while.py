@@ -4,7 +4,7 @@ import time
 start_time_for = time.time()
 
 start = 1
-end = 10
+end = 10000000
 
 for i in range(start, end + 1):
     result = i + i

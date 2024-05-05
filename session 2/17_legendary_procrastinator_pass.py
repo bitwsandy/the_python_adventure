@@ -7,7 +7,7 @@
 
 # Example 1: Placeholder in a function
 def some_function():
-    # Implement this function later
+    # I'll add code later
     pass
 
 # Example 2: Placeholder in a conditional statement
