@@ -1,0 +1,40 @@
+Lambda functions in Python are small anonymous functions that are defined using the
+`lambda` keyword. They are often used when you need a simple function for
+a short period of time and don't want to define a full-fledged function using
+the `def` keyword.
+
+Here's a breakdown of lambda functions:
+
+1. Anonymous:
+        Lambda functions are anonymous because they don't have a name like regular
+        functions defined using `def`.
+
+2. Syntax:
+        The syntax for defining a lambda function is
+        `lambda arguments: expression`.
+        It can take any number of arguments but can only have one expression.
+
+3. Single Expression:
+        Lambda functions are restricted to a single expression,
+        which is evaluated and returned.
+
+4. Conciseness:
+        Lambda functions are typically used for short, simple operations,
+        where defining a regular function would be overkill or cumbersome.
+
+5. Functional Programming:
+        Lambda functions are often used in functional programming paradigms, where
+        functions are treated as first-class citizens and can be passed around as
+        arguments or returned from other functions.
+
+Here's a simple example of a lambda function that adds two numbers:
+
+        add = lambda x, y: x + y
+        print(add(5, 3))  # Output: 8
+
+
+Lambda functions are commonly used in combination with built-in functions
+like `map()`, `filter()`, and `sorted()`, where a quick function is needed
+for a short operation.
+They provide a concise way to create functions without the overhead of defining
+a named function.

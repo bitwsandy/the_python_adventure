@@ -1,0 +1,240 @@
+    Python's built-in functions are a set of ready-to-use functions that come with
+Python itself.
+    They are like tools in a toolbox that you can use to perform various tasks without
+having to write the code from scratch.
+    These functions cover a wide range of tasks, from basic arithmetic operations to
+more complex operations like working with files and data structures.
+
+Here's are some common categories of Python's built-in functions:
+
+Sure, here's a categorization of Python's built-in functions based on the provided categories:
+
+1. Mathematical Functions:
+        abs(), min(), max(), pow(), sum(), round(), divmod()
+
+2. Conversion Functions:
+        int(), float(), str(), bool(), chr(), ord(), hex(), oct()
+
+3. Sequence Functions:
+        len(), sorted(), enumerate(), reversed(), zip()
+
+4. Input and Output Functions:
+        input(), print(), open()
+
+5. Iterator Functions:
+        iter(), next()
+
+6. Type Checking and Conversion Functions:
+        type(), isinstance()
+
+7. Object Attribute Functions:
+        getattr(), setattr(), hasattr()
+
+
+Please find the list of all Python Built in functions with their usage and example below :
+
+
+1. abs(): Returns the absolute value of a number.
+   Example: `abs(-5.5)`
+
+2. all(): Returns True if all elements of the iterable are true (or if the iterable is empty).
+   Example: `all([True, True, False])`
+
+3. any(): Returns True if any element of the iterable is true. If the iterable is empty, returns False.
+   Example: `any([True, True, False])`
+
+4. ascii(): Returns a string containing a printable representation of an object, but escapes non-ASCII characters.
+   Example: `ascii('äöü')`
+
+5. bin(): Converts an integer to a binary string.
+   Example: `bin(10)`
+
+6. bool(): Converts a value to a Boolean.
+   Example: `bool(0)`
+
+7. breakpoint(): Calls sys.breakpointhook(), which enters the debugger.
+   Example: `breakpoint()`
+
+8. bytearray(): Returns a new array of bytes.
+   Example: `bytearray([65, 66, 67])`
+
+9. bytes(): Returns a new bytes object.
+   Example: `bytes([65, 66, 67])`
+
+10. callable(): Returns True if the object appears callable, False otherwise.
+    Example: `callable(print)`
+
+11. chr(): Returns the string representing a character whose Unicode code point is the integer.
+    Example: `chr(65)`
+
+12. classmethod(): Returns a class method for the given function.
+    Example: `classmethod(function_name)`
+
+13. compile(): Compiles the source into a code or AST object.
+    Example: `compile('print("Hello, World!")', 'test', 'eval')`
+
+14. complex(): Returns a complex number.
+    Example: `complex(2, 3)`
+
+15. delattr(): Deletes the named attribute from the given object.
+    Example: `delattr(object_name, 'attribute_name')`
+
+16. dict(): Returns a new dictionary.
+    Example: `dict(a=1, b=2)`
+
+17. dir(): Returns a list of the names in the current local scope or a list of attribute names for a given object.
+    Example: `dir()`
+
+18. divmod(): Returns the quotient and the remainder when dividing two numbers.
+    Example: `divmod(10, 3)`
+
+19. enumerate(): Returns an enumerate object.
+    Example: `enumerate(['a', 'b', 'c'])`
+
+20. eval(): Evaluates the specified expression, if the expression is a string.
+    Example: `eval('3 + 4')`
+
+21. exec(): Executes the specified Python code.
+    Example: `exec('print("Hello, World!")')`
+
+22. filter(): Constructs an iterator from elements of an iterable for which a function returns true.
+    Example: `filter(lambda x: x > 5, [3, 6, 9])`
+
+23. float(): Returns a floating-point number.
+    Example: `float(3)`
+
+24. format(): Returns a formatted representation of a value.
+    Example: `format(123, "x")`
+
+25. frozenset(): Returns a new frozenset object.
+    Example: `frozenset([1, 2, 3])`
+
+26. getattr(): Returns the value of the named attribute of an object.
+    Example: `getattr(object_name, 'attribute_name')`
+
+27. globals(): Returns the current global symbol table as a dictionary.
+    Example: `globals()`
+
+28. hasattr(): Returns True if the object has the named attribute, otherwise False.
+    Example: `hasattr(object_name, 'attribute_name')`
+
+29. hash(): Returns the hash value of the object.
+    Example: `hash('hello')`
+
+30. help(): Invokes the built-in help system.
+    Example: `help()`
+
+31. hex(): Converts an integer to a lowercase hexadecimal string.
+    Example: `hex(255)`
+
+32. id(): Returns the identity of an object.
+    Example: `id(object_name)`
+
+33. input(): Reads a line from input, converts it to a string (stripping a trailing newline), and returns that.
+    Example: `input("Enter your name: ")`
+
+34. int(): Returns an integer object constructed from a number or string.
+    Example: `int('10')`
+
+35. isinstance(): Returns true if the object argument is an instance of the classinfo argument.
+    Example: `isinstance(5, int)`
+
+36. issubclass(): Returns true if the class argument is a subclass of the classinfo argument.
+    Example: `issubclass(int, object)`
+
+37. iter(): Returns an iterator object.
+    Example: `iter([1, 2, 3])`
+
+38. len(): Returns the length (the number of items) of an object.
+    Example: `len([1, 2, 3])`
+
+39. list(): Returns a list.
+    Example: `list((1, 2, 3))`
+
+40. locals(): Updates and returns a dictionary representing the current local symbol table.
+    Example: `locals()`
+
+41. map(): Applies a given function to all the items of an iterable and returns an iterator.
+    Example: `map(lambda x: x * x, [1, 2, 3])`
+
+42. max(): Returns the largest item in an iterable or the largest of two or more arguments.
+    Example: `max(5, 10, 15)`
+
+43. memoryview(): Returns a memory view object.
+    Example: `memoryview(b"example")`
+
+44. min(): Returns the smallest item in an iterable or the smallest of two or more arguments.
+    Example: `min(5, 10, 15)`
+
+45. next(): Retrieves the next item from the iterator.
+    Example: `next(iter([1, 2, 3]))`
+
+46. object(): Returns a new featureless object.
+    Example: `object()`
+
+47. oct(): Converts an integer to an octal string.
+    Example: `oct(8)`
+
+48. open(): Opens a file and returns a corresponding file object.
+    Example: `open('file.txt', 'r')`
+
+49. ord(): Returns an integer representing the Unicode character.
+    Example: `ord('A')`
+
+50. pow(): Returns the value of x to the power of y.
+    Example: `pow(2, 3)`
+
+51. print(): Prints the given object(s) to the standard output.
+    Example: `print("Hello, World!")`
+
+52. property(): Returns a property attribute.
+    Example: `property()`
+
+53. range(): Returns an immutable sequence of numbers
+
+    Example: `range(5)`
+
+54. repr(): Returns a string containing a printable representation of an object.
+    Example: `repr('Hello')`
+
+55. reversed(): Returns a reverse iterator.
+    Example: `reversed([1, 2, 3])`
+
+56. round(): Rounds a floating-point number to a specified number of digits.
+    Example: `round(3.14159, 2)`
+
+57. set(): Returns a new set object.
+    Example: `set([1, 2, 3])`
+
+58. setattr(): Sets the value of the attribute of an object.
+    Example: `setattr(object_name, 'attribute_name', value)`
+
+59. slice(): Returns a slice object.
+    Example: `slice(1, 5, 2)`
+
+60. sorted(): Returns a new sorted list from the elements of the given iterable.
+    Example: `sorted([3, 1, 2])`
+
+61. staticmethod(): Returns a static method for the given function.
+    Example: `staticmethod(function_name)`
+
+62. str(): Returns a string version of the object.
+    Example: `str(123)`
+
+63. sum(): Returns the sum of all the elements in the iterable.
+    Example: `sum([1, 2, 3])`
+
+64. super(): Returns a proxy object that delegates method calls to a parent or sibling class.
+    Example: `super()`
+
+65. tuple(): Returns a tuple.
+    Example: `tuple([1, 2, 3])`
+
+66. type(): Returns the type of an object.
+    Example: `type(123)`
+
+67. vars(): Returns the __dict__ attribute for a module, class, instance, or any other object.
+    Example: `vars()`
+
+68. zip(): Returns an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator is paired together, etc.
+    Example: `zip([1, 2, 3], ['a', 'b', 'c'])`
