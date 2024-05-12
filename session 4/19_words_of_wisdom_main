@@ -1,0 +1,27 @@
+The line `if __name__ == "__main__":`
+    is a common idiom in Python scripts. It allows a script to determine whether
+    it's being run as the main program or being imported as a module into another script.
+
+Here's how it works:
+
+1. `__name__`:
+        In Python, `__name__` is a special built-in variable that holds the name of the
+        current module. When a Python script is executed, Python sets `__name__` to
+        `"__main__"` if the script is being run as the main program.
+
+2. `if __name__ == "__main__":`:
+        This line checks if the value of `__name__` is equal to `"__main__"`. If it is,
+        it means the script is being run as the main program and not imported as a module.
+
+3. Execution:
+        If the condition `__name__ == "__main__"` evaluates to `True`, the code block
+        under the `if` statement is executed. This typically contains the code that you
+        want to run when the script is executed directly.
+
+Here's why this idiom is useful:
+
+- It allows you to write code that can be both imported as a module and run as a
+  standalone script.
+- Code inside the `if __name__ == "__main__":` block is executed only when the script
+  is run directly, not when it's imported as a module. This prevents code in the script
+  from being executed inadvertently when it's imported elsewhere.

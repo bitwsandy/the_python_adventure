@@ -1,0 +1,88 @@
+        Regular expressions (regex) in Python are a powerful tool for pattern matching
+and manipulation of strings. They provide a concise and flexible means for
+identifying specific patterns within text data. Python's `re` module provides support
+for regular expressions.
+
+Here are some key aspects of regular expressions in Python:
+
+1. Pattern Matching :
+        Regular expressions allow you to define patterns to match against strings.
+        These patterns can include literal characters, character classes (such as
+        digits or letters), quantifiers (to specify repetition), and more.
+
+2. Searching and Matching :
+        Python's `re` module provides functions like `search()` and `match()` to
+        search for patterns within strings. These functions return match objects
+        if a match is found, allowing you to retrieve information about the match.
+
+3. Substitution :
+        Regular expressions can be used to substitute one pattern with another in
+        a string. This is useful for tasks like find-and-replace operations.
+
+4. Splitting :
+        Regular expressions can be used to split strings based on a specified pattern.
+
+5. Finding All Matches :
+        The `findall()` function in Python's `re` module returns all occurrences of a
+        pattern within a string as a list.
+
+6. Flags :
+        Python's `re` module supports flags that modify the behavior of regular
+        expression matching.
+        For example, the `re.IGNORECASE` flag can be used to perform case-insensitive
+        matching.
+
+RE syntax :
+
+1. Literal Characters:
+        Regular expressions can match literal characters exactly as they appear.
+        For example, the regular expression `hello` will match the string "hello"
+        in the input text.
+
+2. Character Classes:
+        Character classes allow you to match one of several characters at a specific
+        position. They are defined using square brackets.
+        For example, `[aeiou]` matches any vowel.
+
+3. Quantifiers :
+   - `*`    : Matches zero or more occurrences of the preceding element.
+   - `+`    : Matches one or more occurrences of the preceding element.
+   - `?`    : Matches zero or one occurrence of the preceding element.
+   - `{n}`  : Matches exactly `n` occurrences of the preceding element.
+   - `{n,}` : Matches `n` or more occurrences of the preceding element.
+   - `{n,m}`: Matches between `n` and `m` occurrences of the preceding element.
+
+4. Anchors :
+    - ^ :   This anchor asserts the start of a line or string.
+    - $ :   This anchor asserts the end of a line or string.
+    - \b:   This anchor matches a word boundary, which is the position between a
+            word character (\w) and a non-word character (\W) or vice versa.
+    - \B:   This anchor matches a non-word boundary, which is the position between
+            two word characters (\w) or two non-word characters (\W).
+
+5. Wildcards :
+   - `.`: Matches any single character except newline.
+
+6. Escape Characters:
+        Some characters have special meanings in regular expressions. To match them
+        literally, you need to escape them using a backslash (`\`). For example,
+        `\.` matches a period.
+
+7. Alternation :
+   - `|`: Matches either the expression before or after the pipe.
+
+8. Grouping :
+   - `()`: Groups multiple tokens together. It also captures the matched text
+      so that it can be referenced later.
+
+9. Character Escapes :
+   - `\d`: Matches any digit (equivalent to `[0-9]`).
+   - `\w`: Matches any alphanumeric character (equivalent to `[a-zA-Z0-9_]`).
+   - `\s`: Matches any whitespace character (space, tab, newline, etc.).
+   - `\D`, `\W`, `\S`: Match the opposite of `\d`, `\w`, `\s` respectively.
+
+10. Modifiers :
+    - `i`: Case-insensitive matching.
+    - `m`: Multi-line matching (treats beginning and end characters (^ and $) as working on each line rather than the whole string).
+    - `s`: Allows the dot (`.`) to match newline characters as well.
+    - `x`: Ignores whitespace and allows comments within the pattern.
