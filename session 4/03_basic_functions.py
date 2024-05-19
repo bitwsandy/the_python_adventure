@@ -50,6 +50,19 @@ def is_palindrome(s):
 print(is_palindrome("radar"))  # Output: True
 print(is_palindrome("hello"))  # Output: False
 
+# Return Multiple values
+def calc(a,b):
+    return a+b, a-b, a*b, a/b
+
+# def calc(a,b):
+#     return a+b
+#     return a-b
+#     return a*b
+#     return a/b
+
+sum, sub, mult, div = calc(10,5)
+print(sum, sub, mult, div)
+
 
 
 

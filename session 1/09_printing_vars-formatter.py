@@ -4,7 +4,7 @@ formatter = "{} {} {} {}"
 s1 = "Hello World"
 
 print(formatter.format(1, 2, 3, 4))
-# print("{} {} {} {}".format(1, 2, 3, 4))
+#print("{} {} {} {}".format(1, 2, 3, 4))
 print(formatter.format("one", "two", "three", "four"))
 print(formatter.format("one", 2, "three", 4))
 print(formatter.format(True, 2, False, "four"))

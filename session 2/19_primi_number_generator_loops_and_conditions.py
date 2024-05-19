@@ -1,7 +1,6 @@
 limit = int(input("Enter the upper limit for prime numbers: "))
 print("Prime numbers up to", limit, ":")
-for number in range(2, limit + 1):
-    # i = 3
+for number in range(2, limit + 1): # number : 4
     prime = True
     if number < 2:
         prime = False

@@ -8,6 +8,12 @@ except ZeroDivisionError:
     print("Error: Division by zero!")
 except ValueError:
     print("Error: Please enter valid numbers.")
+except Exception as e :
+    print(f"Unexpected Error Ocures : {e}")
+else :
+    print("No Error Occured")
+finally:
+    print("I don't care if there is error or not, i'll get executed anyways")
 
 
 # Exercise 2: File Handling with Error Checking

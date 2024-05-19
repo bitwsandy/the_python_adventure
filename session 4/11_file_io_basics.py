@@ -1,6 +1,6 @@
 # 1. Opening a File:
 # To work with a file, you first need to open it. You can open a file using the open()
-# function. You need to provide the file name and the mode in which you want to open
+# function. You need to provide the file path/name and the mode in which you want to open
 # the file (read, write, or append). For example:
 
 file = open("example.txt", "r")  # Open the file "example.txt" in read mode

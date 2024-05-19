@@ -20,6 +20,10 @@ def regex_operations_example():
     # span(): Returns a tuple containing the (start, end) indices of the match.
     # groups(): Returns a tuple containing all the subgroups of the match.
 
+    # find all occurences of r'fox'
+    literal_matches = re.findall(literal_pattern, text)
+    print(literal_matches)
+
     # Character Classes
     # Define a pattern to match any vowel
     char_class_pattern = r'[aeiou]'
@@ -42,9 +46,14 @@ def regex_operations_example():
     # If a match is found, print the matched text
     if quantifier_match:
         print("Quantifier match found:", quantifier_match.group())
+    # findall
+    quantifier_matches = re.findall(quantifier_pattern, text)
+    print("Quantifier matches found:", quantifier_matches)
+
+
 
     # Anchors
-    # Define a pattern to match the word "The" at the beginning of the text
+    # Define a pattern to match the word "The" at the beginning of the text(caret)
     anchor_pattern = r'^The'
     # Search for the pattern in the text
     anchor_match = re.search(anchor_pattern, text)
@@ -55,11 +64,18 @@ def regex_operations_example():
     # Wildcards
     # Define a pattern to match "lazy" followed by any character
     wildcard_pattern = r'lazy.'
+    # lazy  : This part of the pattern matches the literal string "lazy".
+    # .     : This part of the pattern matches any single character except a newline.
+    # this pattern will match strings like "lazy ", "lazy!", "lazy?", "lazy5", etc.,
+    # where the last character can be anything except a newline character.
+
     # Search for the pattern in the text
     wildcard_match = re.search(wildcard_pattern, text)
     # If a match is found, print the matched text
     if wildcard_match:
         print("Wildcard match found:", wildcard_match.group())
+    wildcard_matches = re.findall(wildcard_pattern, text)
+    print(wildcard_matches)
 
     # Escape Characters
     # Define a pattern to match a period (escaped with '\')
@@ -84,6 +100,8 @@ def regex_operations_example():
     # If a match is found, print the matched text
     if alternation_match:
         print("Alternation match found:", alternation_match.group())
+    alternation_matches = re.findall(alternation_pattern, text)
+    print(alternation_matches)
 
     # Grouping
     # Define a pattern to capture groups of words

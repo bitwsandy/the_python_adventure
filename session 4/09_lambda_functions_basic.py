@@ -74,7 +74,7 @@ print(filtered_numbers)
 # Calculate Factorials of Numbers:
 #    Given a list of numbers, calculate the factorial of each number.
 # List of numbers
-numbers = [1, 2, 3, 4, 5]
+numbers = [1,2 ,2, 3, 4, 5]
 # Calculate the factorial of each number using a lambda function
 factorials = list(map(lambda x: 1 if x == 0 else x * factorials(x - 1), numbers))
 # Print the list of factorials

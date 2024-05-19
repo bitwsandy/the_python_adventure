@@ -86,3 +86,69 @@ RE syntax :
     - `m`: Multi-line matching (treats beginning and end characters (^ and $) as working on each line rather than the whole string).
     - `s`: Allows the dot (`.`) to match newline characters as well.
     - `x`: Ignores whitespace and allows comments within the pattern.
+
+        Here are some fundamental components and symbols in regular expressions that
+can help you get started:
+
+1. Literal Characters: Regular characters like letters and numbers that match themselves.
+   - Example: The regex `cat` matches the string "cat" in "The cat is on the mat."
+
+2. Metacharacters: Special characters that have specific meanings and functions. Some common metacharacters are:
+   - `.` (Dot): Matches any single character except newline characters.
+     - Example: `a.b` matches "acb", "aab", "axb", etc.
+   - `^` (Caret): Matches the start of a string.
+     - Example: `^Hello` matches "Hello" in "Hello World" but not in "Say Hello".
+   - `$` (Dollar): Matches the end of a string.
+     - Example: `world$` matches "world" in "Hello world" but not in "world peace".
+
+3. Character Classes: Denote a set of characters that you wish to match.
+   - `[abc]`: Matches any one of the characters a, b, or c.
+   - `[^abc]`: Matches any character except a, b, or c.
+
+4. Quantifiers: Specify how many instances of a character, group, or character class must be present in the target string for a match to occur.
+   - `*` (Asterisk): Matches zero or more of the preceding element.
+     - Example: `bo*` matches "b", "bo", "boo", "booo", etc.
+   - `+` (Plus): Matches one or more of the preceding element.
+     - Example: `a+` matches "a", "aa", "aaa", etc.
+   - `?` (Question mark): Matches zero or one of the preceding element, making it optional.
+     - Example: `colou?r` matches both "color" and "colour".
+
+5. Groups and Ranges:
+   - Parentheses `()` are used to define a group or "subpattern," which can be treated as a single unit.
+     - Example: `(abc)+` matches "abc", "abcabc", "abcabcabc", etc.
+   - Braces `{}` specify the exact number, or range, of matches.
+     - Example: `a{2,3}` matches "aa" and "aaa" but not "a".
+
+6. Escape Character: The backslash `\` is used to escape special characters, turning them into literal characters.
+   - Example: `\.` matches a literal dot ".".
+
+
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+|       - Either Or
+( )     - Group
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+#### Sample Regexs ####
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+

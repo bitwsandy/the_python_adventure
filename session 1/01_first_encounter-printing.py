@@ -7,3 +7,5 @@ print("I'd like to show my 'coding' skills to 'mark'.")
 print('I"d like to show my "coding" skills to "mark".')
 print('I became \'best\' coder by printing "previous" line.')
 print("""I became 'best' coder by printing "previous" line.""")
+
+print(__name__)

@@ -9,17 +9,18 @@ def subtract(x, y):
 def multiply(x, y):
     return x * y
 
-def divide(x, y):
-    if y != 0:
-        return x / y
-    else:
-        return "Error: Division by zero!"
-
-
 # def divide(x, y):
-#     try:
-#         result = x / y
-#         return result
-#     except ZeroDivisionError:
+#     if y != 0:
+#         return x / y
+#     else:
 #         return "Error: Division by zero!"
+
+
+def divide(x, y):
+    try:
+        result = x / y
+        return result
+    except ZeroDivisionError:
+        print("Error: Division by zero!|")
+        raise
 
