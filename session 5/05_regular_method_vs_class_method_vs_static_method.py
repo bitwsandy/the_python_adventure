@@ -63,4 +63,46 @@ print(GameCharacter.total_characters)
 # Study Drills :
 # 1. Try to run class method using instances and Using class figure out the difference
 # 2. Create GamePlayer from a String with and without class method
+
+
+# class Employee :
+#     num_emps = 0
+#     incr = 1.10
 #
+#     def __init__(self, eid, ename, salary):
+#         self.eid = eid
+#         self.ename = ename
+#         self.salary = salary
+#         Employee.num_emps += 1
+#
+#     def display_info(self):
+#         print(f"Emp Details : {self.eid}, {self.ename}, {self.salary}")
+#
+#     def incr_salary(self):
+#         self.salary = self.salary*Employee.incr
+#
+#     @classmethod
+#     def update_incr(cls, inc):
+#         cls.incr = inc
+#
+#     @classmethod
+#     def reset_emp_count(cls):
+#         cls.num_emps = 0
+#
+# emp1 = Employee(1, "abc", 4.5)
+# emp2 = Employee(2, "xyz", 4.7)
+#
+# emp1.display_info()
+# emp2.display_info()
+#
+# emp1.incr_salary()
+# print("After Incrementing Salary of emp1")
+# emp1.display_info()
+#
+# Employee.update_incr(1.15)
+# print(f"Increment has been update to {Employee.incr}")
+#
+# emp2.incr_salary()
+# print("After Incrementing Salary of emp2")
+# emp2.display_info()
+

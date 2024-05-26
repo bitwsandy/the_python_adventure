@@ -1,0 +1,49 @@
+    Unit testing, often associated with Test-Driven Development (TDD), is a fundamental practice in modern
+software development aimed at ensuring individual pieces of code (units) work as intended. Here's an
+overview of both concepts:
+
+### Unit Testing
+
+    Unit testing involves testing the smallest testable parts of an application, typically functions or methods,
+in isolation from the rest of the system. The goal is to ensure that each unit performs correctly according
+to its design specifications.
+
+Key Characteristics of Unit Testing:
+- Isolation:
+        Units are tested in isolation, without interaction with dependencies like databases, file systems,
+        or external services. This isolation is often achieved using mocks or stubs.
+- Automation:
+        Tests are automated, meaning they can be run quickly and repeatedly without manual intervention.
+- Repeatability:
+        Tests should produce the same results every time they are run, provided the code hasn't changed.
+- Coverage:
+        Ideally, tests should cover every possible execution path and set of input values for the unit being tested.
+
+### Test-Driven Development (TDD)
+
+Test-Driven Development is a software development process that relies heavily on the repetition of a very
+short development cycle: first, the developer writes a failing automated test case that defines a desired
+improvement or new function; then, they produce the minimum amount of code to pass that test; and finally,
+they refactor the new code to acceptable standards.
+
+TDD Cycle:
+1. Write a Test : Start by writing a test that defines a function or improvements of a function.
+2. Run the Test : Run the test, along with all other tests. At this point, the new test should fail
+                 because the feature hasn't been implemented yet.
+3. Write Code   : Write the code necessary to pass the test. This code may not be perfect.
+4. Run Tests    : Run all tests again. If all tests pass, move on; if they fail, fix the code until they pass.
+5. Refactor     : Clean up the new code, applying any improvements needed to ensure it adheres to the
+             organization's coding standards.
+6. Repeat       : Repeat this cycle for every new feature or improvement.
+
+Benefits of TDD:
+- Improved Code Quality: Writing tests first requires thinking through the design before writing the code, \
+  which can lead to better-designed, cleaner, and more maintainable code.
+
+- Regression Protection: As new features are added or existing features are modified, tests can quickly
+  catch regressions in functionality.
+
+- Documentation: Tests serve as documentation for the expected behavior of the system.
+
+- Confidence: Developers can make changes or refactor code more confidently since tests will reveal if
+  something breaks.

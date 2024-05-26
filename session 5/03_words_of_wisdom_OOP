@@ -1,4 +1,4 @@
-Object-Oriented Programming (OOP) in Python is a programming paradigm that uses
+    Object-Oriented Programming (OOP) in Python is a programming paradigm that uses
 objects and classes to organize software design. It makes it easier to keep your
 code modular, reusable, and organized.
 
@@ -64,7 +64,6 @@ related to library management in one place.
 These examples illustrate how using OOP principles can help structure your code in a way that
 is modular (easy to segment), reusable (easy to reuse with minimal duplication), and organized
 (intuitive and manageable).
-
 
 
         Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects,

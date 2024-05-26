@@ -1,0 +1,17 @@
+    A context manager in Python is a special type of object designed to manage a context within a block of
+code, often used for managing resources such as files, connections, or locks. Context managers are commonly
+used to handle resource allocation and release, ensuring that resources are properly cleaned up after their
+use, regardless of whether an exception occurs during their use.
+
+How Context Managers Work
+   The context manager protocol in Python consists of two essential methods:
+        __enter__(): This method sets up the context and is executed at the beginning of the block following
+        the with statement. It usually returns the resource that needs to be managed.
+        __exit__(exc_type, exc_val, exc_tb): This method handles the clean up actions and is executed at
+        the end of the block, even if the block exits with an exception. It can handle exceptions, suppress
+        them if necessary, and perform any cleanup tasks.
+
+Why Use Context Managers
+    Context managers are beneficial because they simplify the setup and teardown phases of resources, help
+    to avoid common errors like leaving connections open or forgetting to close a file, and they make the
+    code cleaner and more readable.

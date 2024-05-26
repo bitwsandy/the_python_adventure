@@ -24,14 +24,21 @@ class Account:
         else:
             print("Invalid withdrawal amount")
 
-    def show_balance(self):
-        print(f"Current balance: {self.__balance}")
+    def __avg_hours_per_day(self, hours):
+        self.total_hours = hours
+        avg_hrs = self.total_hours / 20
+        return avg_hrs
+
+    def show_balance(self, hrs):
+        print(f"Current balance: {self.__balance} and Hours are : {self.__avg_hours_per_day(hrs)}")
 
 # Creating an instance of Account
 acc = Account("John")
 acc.deposit(100)
 acc.withdraw(50)
-acc.show_balance()  # Outputs: Current balance: 50
+acc.show_balance(160)  # Outputs: Current balance: 50
+# print(acc.__balance)
+# print(acc.__avg_hours_per_day())
 
 
 

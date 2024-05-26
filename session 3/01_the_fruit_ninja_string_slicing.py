@@ -32,7 +32,7 @@ print(my_string[7:12])    # Output: World
 
 my_string = "Hello, World!"
 print(my_string[:5])      # Output: Hello
-print(my_string[7:])      # Output: World
+print(my_string[7:])      # Output: World!
 
 
 # 4. Using Negative Indices :

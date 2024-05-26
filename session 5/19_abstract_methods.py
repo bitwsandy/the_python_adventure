@@ -7,7 +7,13 @@ class Employee(ABC):
 
     @abstractmethod
     def calculate_salary(self):
+        print(f"Calculating Salary for {self.name}")
         pass
+    # It is possible to add code to an abstract method in an abstract base class, and still
+    # require subclasses to override it. The code in the abstract method can be executed
+    # when subclasses explicitly call the method of the superclass using super(). This can be
+    # useful when you want to provide some common functionality in the abstract method, which
+    # subclasses can then extend or modify.
 
     # Concrete Method
     def say_hello(self):
@@ -20,6 +26,7 @@ class Manager(Employee):
         self.monthly_salary = monthly_salary
 
     def calculate_salary(self):
+        super().calculate_salary()
         return self.monthly_salary
 
 class Engineer(Employee):

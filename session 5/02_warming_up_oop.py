@@ -57,11 +57,11 @@ class Car:
 car1 = Car("Toyota", "Corolla", 2022, "White", "Petrol")
 car2 = Car("Ford", "Mustang", 2021, "Red", "Petrol")
 
-car1.display_status()
-car2.display_status()
-print(car1.__dict__)
-print(car2.__dict__)
-print(Car.__dict__)
+# car1.display_status()
+# car2.display_status()
+# print(car1.__dict__)
+# print(car2.__dict__)
+# print(Car.__dict__)
 
 # 6. Interactive Test Script
 #    - Task: Write a small interactive script where users input car details, create a `Car`

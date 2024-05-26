@@ -8,6 +8,8 @@ class MyClass:
         print("__init__ method is called")
         self.attribute = "Initialized"
 
+
+
 # Creating an instance of MyClass
 obj = MyClass()
 print("Object created successfully")

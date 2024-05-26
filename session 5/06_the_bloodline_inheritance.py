@@ -16,8 +16,13 @@ class Developer(Employee):
         super().__init__(name, email)  # Call to the superclass (Employee) constructor
         self.programming_lang = programming_lang  # Additional attribute specific to developers
 
+# class Developer(Employee):
+#     def __init__(self, name, email, programming_lang):
+#         Employee.__init__(self, name, email)
+
     def display_info(self):
         super().display_info()
+        # Employee.display_info(self)
         print(f"Programming Language: {self.programming_lang}")
 
 
