@@ -23,6 +23,13 @@ def greet_default(name="Guest"):
     """Greets the person with the given name or 'Guest' if no name is provided."""
     print("Hello,", name, "!")
 
+
+def calc_numbers(a, b):
+    """Adds two numbers and returns the result."""
+    return a + b, a-b, a*b, a/b
+    # print(a+b)
+
+
 # Call the functions
 greet()
 greet_name("Alice")
@@ -30,6 +37,12 @@ print("Sum:", add_numbers(3, 4))
 print("Area:", calculate_area(2, 3, 4))
 greet_default()  # Using default value
 greet_default("Bob")  # Providing a custom value
+# print(add_numbers(10,5))
+sum,sub,mult,div = calc_numbers(10,5)
+print(sum, sub, mult,div)
+
+calc = calc_numbers(20,5)
+print(calc)
 
 
 # 1. Function Definition :
