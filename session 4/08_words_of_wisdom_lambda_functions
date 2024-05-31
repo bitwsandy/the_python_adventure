@@ -11,7 +11,7 @@ Here's a breakdown of lambda functions:
 
 2. Syntax:
         The syntax for defining a lambda function is
-        `lambda arguments: expression`.
+        `lambda parameters : expression`.
         It can take any number of arguments but can only have one expression.
 
 3. Single Expression:

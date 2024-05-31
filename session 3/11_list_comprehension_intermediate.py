@@ -9,7 +9,7 @@ print("Squares:", squares)
 
 
 # 2. Even Numbers
-even_numbers = [x for x in range(2, 21, 2)]
+even_numbers = [x%2 for x in range(2, 21, 2)]
 print("Even Numbers:", even_numbers)
 
 # `[x for x in range(2, 21, 2)]`:
@@ -39,6 +39,10 @@ print("Word Lengths:", word_lengths)
 string = "hello world"
 vowels_count = sum(1 for char in string if char in 'aeiou')
 print("Vowels Count:", vowels_count)
+
+## Study Drills
+# 1. Count Consonents
+# 2. Count Words in a string
 
 
 ## OR

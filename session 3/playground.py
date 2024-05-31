@@ -1,26 +1,29 @@
-text = input("Enter a string to encrypt: ")
-key = int(input("Enter an encryption key (integer): "))
+# Dictionary Aggregation
+# Given list of dictionaries representing people and their attributes
+people = [
+    {'name': 'Alice', 'age': 25, 'occupation': 'Engineer'},
+    {'name': 'Bob', 'age': 30, 'occupation': 'Doctor'},
+    {'name': 'Charlie', 'age': 20, 'occupation': 'Artist'},
+    {'name': 'David', 'age': 35, 'occupation': 'Engineer'},
+    {'name': 'Eve', 'age': 28, 'occupation': 'Artist'}
+]
 
-encrypted_text = ''
-for char in text:
-    # hello
-    if char.isalpha():
-        shift = ord('a') if char.islower() else ord('A')
-        encrypted_char = chr((ord(char) - shift + key) % 26 + shift)
-        encrypted_text += encrypted_char
+# Initialize an empty dictionary to store occupation as keys and list of names as values
+occupation_dict = {}
+
+# Iterate over each person in the list of people
+for person in people:
+    # Extract occupation and name from the current person dictionary
+    occupation = person['occupation'] # Engineer
+    name = person['name'] # Alice
+
+    # Check if the occupation is already in the occupation dictionary
+    if occupation not in occupation_dict:
+        # If not, create a new key-value pair with occupation as key and a list containing the name as value
+        occupation_dict[occupation] = [name]
     else:
-        encrypted_text += char
+        # If occupation already exists in the dictionary, append the name to the existing list
+        occupation_dict[occupation].append(name)
 
-print("Encrypted text:", encrypted_text)
-
-key = int(input("Enter a key to decrypt : "))
-decrypted_text = ''
-for char in encrypted_text:
-    if char.isalpha():
-        shift = ord('a') if char.islower() else ord('A')
-        decrypted_char = chr((ord(char) - shift - key) % 26 + shift)
-        decrypted_text += decrypted_char
-    else:
-        decrypted_text += char
-
-print("Decrypted text:", decrypted_text)
+# Print the occupation dictionary
+print("Occupation dictionary:", occupation_dict)

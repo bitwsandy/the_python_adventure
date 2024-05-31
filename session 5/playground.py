@@ -1,33 +1,21 @@
-class Vector:
-    def __init__(self, x, y):
-        self.x = x  # x-coordinate
-        self.y = y  # y-coordinate
+def print_details(name, age=None, job=None):
+    """Prints details about a person, handling multiple scenarios.
 
-    # Overloading the addition operator
-    def __add__(self, other):
-        if isinstance(other, Vector):
-            return Vector(self.x + other.x, self.y + other.y)
-        return NotImplemented
+    Args:
+        name (str): The person's name.
+        age (int, optional): The person's age. Defaults to None.
+        job (str, optional): The person's job. Defaults to None.
+    """
+    details = f"Name: {name}"
+    if age:
+        details += f", Age: {age}"
+    if job:
+        details += f", Job: {job}"
+    print(details)
 
-    # Overloading the subtraction operator
-    def __sub__(self, other):
-        if isinstance(other, Vector):
-            return Vector(self.x - other.x, self.y - other.y)
-        return NotImplemented
 
-    # Overloading the string representation method, for easy printing of the object
-    def __str__(self):
-        return f"Vector({self.x}, {self.y})"
-
-# Example usage:
-v1 = Vector(2, 3)
-v2 = Vector(5, 7)
-v3 = Vector(3, 8)
-
-# Add two vectors
-result = v1 + v2 + v3
-print(result)  # Outputs: Vector(7, 10)
-
-# Subtract two vectors
-result = v1 - v2
-print(result)  # Outputs: Vector(-3, -4)
+# Example usage
+print_details("Alice")  # Outputs: Name: Alice
+print_details("Bob", age=25)  # Outputs: Name: Bob, Age: 25
+print_details("Charlie", job="Engineer")  # Outputs: Name: Charlie, Job: Engineer
+print_details("Dana", 34, "Doctor")  # Outputs: Name: Dana, Age: 34, Job: Doctor

@@ -6,6 +6,10 @@ square = lambda x: x**2
 # Test the lambda function
 print(square(5))  # Output: 25
 
+# Study Drills :
+# Create a lambda function which calculates square root of given number
+# Create a lambda function which adds number to itself
+
 
 # Addition of Two Numbers:
 #    Write a lambda function that takes two numbers as input and returns their sum.

@@ -8,4 +8,10 @@ print('I"d like to show my "coding" skills to "mark".')
 print('I became \'best\' coder by printing "previous" line.')
 print("""I became 'best' coder by printing "previous" line.""")
 
-print(__name__)
+print("hello world 1")
+print('hello world 2')
+print("hello 'world' 3")
+print('hello "world" 4')
+print("""'hello' "world" 5""")
+# """hello"""" "world" '6'
+print(" \"\"\"hello\"\"\" \"world\" '6' ")

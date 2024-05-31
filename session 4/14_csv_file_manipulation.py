@@ -14,13 +14,15 @@ with open(input_file, "r", newline='') as infile:
     data = list(reader)
 
 # Perform operations on the data (e.g., calculate total of a column)
-total = sum(float(row[1]) for row in data)
+total_rows = len(data)
+total_columns = len(data[0])
 
 # Write the results to a new CSV file
 with open(output_file, "w", newline='') as outfile:
     writer = csv.writer(outfile)
     writer.writerow(["Total"])
-    writer.writerow([total])
+    writer.writerow([total_rows])
+    writer.writerow([total_columns])
 
 print("Results written to output.csv")
 

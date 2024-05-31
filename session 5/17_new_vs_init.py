@@ -12,6 +12,7 @@ class MyClass:
 
 # Creating an instance of MyClass
 obj = MyClass()
+print(obj)
 print("Object created successfully")
 
 # The MyClass class defines both the __new__ and __init__ methods.

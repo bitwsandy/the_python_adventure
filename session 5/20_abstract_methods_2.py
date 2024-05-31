@@ -6,7 +6,7 @@
 
 from abc import ABC, abstractmethod
 
-class PaymentProcessor(ABC):
+class PaymentProcessor():
     @abstractmethod
     def authenticate(self):
         """Authenticate the payment method."""

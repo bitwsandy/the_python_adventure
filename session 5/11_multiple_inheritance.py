@@ -1,16 +1,16 @@
 # Multiple inheritance occurs when a class inherits from more than one base class.
 # Care must be taken to manage the complexity and avoid conflicts, such as the diamond problem.
 
-class Father:
-    def skills(self):
-        print(f"Gardening, Programming")
-
 class Mother:
     def skills(self):
         print("Driving, Art")
 
-class Child(Father, Mother):  # Inherits from both Father and Mother
+class Father:
     def skills(self):
+        print(f"Gardening, Programming")
+
+class Child(Mother, Father):  # Inherits from both Father and Mother
+    def skills_child(self):
         Father.skills(self)
         Mother.skills(self)
         print("Sports")
@@ -22,7 +22,7 @@ class Child(Father, Mother):  # Inherits from both Father and Mother
 
 # Usage
 child = Child()
-child.skills()
+child.skills_child()
 
 # Outputs:
 # Gardening, Programming

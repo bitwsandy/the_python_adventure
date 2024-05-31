@@ -54,7 +54,8 @@ v1 = Vector(2, 3)
 v2 = Vector(5, 7)
 
 # Add two vectors
-result = v1 + v2
+res = (v1.x + v2.x)
+result = v1 + v2 # v1.__add__(v2)
 print(result)  # Outputs: Vector(7, 10)
 
 # Subtract two vectors
