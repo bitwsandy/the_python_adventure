@@ -36,7 +36,7 @@ print(Bicycle.num_wheels)
 print(bike1.num_wheels)
 print(bike2.num_wheels)
 
-# Updatig value of class variable using class
+# Updating value of class variable using class
 Bicycle.num_wheels = 3
 print(Bicycle.num_wheels)
 print(bike1.num_wheels)

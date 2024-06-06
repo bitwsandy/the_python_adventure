@@ -11,14 +11,14 @@ class GameCharacter:
         print(f"{self.name} is at level {self.level}.")
 
     # Class method: Used to create an instance of gameCharacter class
-    @classmethod
-    def from_string(cls, gameCharStr):
-        name, level = gameCharStr.split('-')
-        return cls(name,level)
+    # @classmethod
+    # def from_string(cls, gameCharStr):
+    #     name, level = gameCharStr.split('-')
+    #     return cls(name,level)
 
     @classmethod
     def reset_count(cls):
-        cls.total_characters = 0 
+        cls.total_characters = 0
 
 
     # Static method: Used to determine if a level upgrade is allowed
@@ -30,24 +30,38 @@ class GameCharacter:
 character1 = GameCharacter("Link", 5)
 character2 = GameCharacter("Zelda", 7)
 
-# Call regular method: it uses instance attributes
-character1.display_character()  # Outputs: Link is at level 5.
-character2.display_character()  # Outputs: Zelda is at level 7.
 
 # Call class method: it affects class state, not dependent on any instance
-newGameChar1 = 'crimson-11'
-character3 = GameCharacter.from_string(newGameChar1)
-character3.display_character()
+# newGameChar1 = 'crimson-11'
+# character3 = GameCharacter.from_string(newGameChar1)
+# character3.display_character()
 
 # Call static method: performs a utility task, checking if a level can be upgraded
 print(GameCharacter.can_level_up(1200))  # Outputs: True
 print(GameCharacter.can_level_up(800))   # Outputs: False
+print(character1.can_level_up(1500))
+
+# Call instance method
+print(GameCharacter.display_character(character2))
+print(character1.display_character())
+print(character2.display_character())
+
+# Printing Value for class variable
+print(GameCharacter.total_characters)
+print(character1.total_characters)
+print(character2.total_characters)
+
+# calling class method
+# GameCharacter.reset_count()
+# character1.reset_count()
+# character2.reset_count()
 
 print(GameCharacter.total_characters)
-GameCharacter.reset_count()
-print(GameCharacter.total_characters)
+print(character1.total_characters)
+print(character2.total_characters)
 
-# Regular Method (display_character):
+
+# Regular Method/ Instance Method (display_character):
 #       Uses self to access and display instance-specific data such as the character's
 #       name and level.
 # Class Method (from_string):
