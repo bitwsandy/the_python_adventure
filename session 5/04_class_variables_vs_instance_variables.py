@@ -18,11 +18,24 @@ class Bicycle:
 bike1 = Bicycle("Trek", "Emonda")
 bike2 = Bicycle("Giant", "Defy Advanced")
 
-bike1.num_wheels = 3
+print(Bicycle.num_wheels)
+# print(Bicycle.make)
+print(bike1.make)
+print(bike1.num_wheels )
 
-# Display information about bike1
-bike1.display_info()  # Outputs: Trek Emonda has 2 wheels.
-bike2.display_info()
+print(Bicycle.num_bicycles_created)
+print(bike1.num_bicycles_created)
+print(bike2.num_bicycles_created)
+
+bike2.num_wheels = 3
+print(Bicycle.num_wheels)
+print(bike1.num_wheels)
+print(bike2.num_wheels)
+
+Bicycle.num_wheels = 3
+print(Bicycle.num_wheels)
+print(bike1.num_wheels)
+print(bike2.num_wheels)
 
 # Display total bicycles created using a class method
 print(f"Total bicycles created: {Bicycle.num_bicycles_created}")  # Outputs: Total bicycles created: 2
