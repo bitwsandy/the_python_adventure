@@ -18,20 +18,25 @@ class Bicycle:
 bike1 = Bicycle("Trek", "Emonda")
 bike2 = Bicycle("Giant", "Defy Advanced")
 
+# Class variables can be accessed directly using class or any of it's instance
+# However, instance variables can be accessed using respective instance only
 print(Bicycle.num_wheels)
 # print(Bicycle.make)
 print(bike1.make)
 print(bike1.num_wheels )
 
+# Accessing class variable using class and instances
 print(Bicycle.num_bicycles_created)
 print(bike1.num_bicycles_created)
 print(bike2.num_bicycles_created)
 
+# Updating value of class variable using instance
 bike2.num_wheels = 3
 print(Bicycle.num_wheels)
 print(bike1.num_wheels)
 print(bike2.num_wheels)
 
+# Updatig value of class variable using class
 Bicycle.num_wheels = 3
 print(Bicycle.num_wheels)
 print(bike1.num_wheels)
