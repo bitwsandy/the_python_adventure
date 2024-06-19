@@ -32,12 +32,12 @@ https://www.nasa.gov
 """
 sentence = 'Start a sentence and then bring it to an end'
 
-pattern = re.compile(r'\w')
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
 
-matches = pattern.finditer(sentence)
+matches = pattern.finditer(text)
 
 for match in matches :
-    print(match)
+    print(match.group(0))
 
 # Study Drills :
 # 1. Match all three digits : r'\d\d\d'

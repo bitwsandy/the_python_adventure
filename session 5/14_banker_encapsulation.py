@@ -32,6 +32,14 @@ class Account:
     def show_balance(self, hrs):
         print(f"Current balance: {self.__balance} and Hours are : {self.__avg_hours_per_day(hrs)}")
 
+# Study Drills
+# 1. Try to print __balance using instance
+# 2. Try executing  __avg_hours_per_day using instance
+# 3. Understand all instance methods by calling them
+# 4. Understand the program
+# 5. Create Student class | rno,name,email,marks(int), __cno |
+#    | __get_grade() : Grade | display_info : rno,name,email,cno,grade |
+
 # Creating an instance of Account
 acc = Account("John")
 acc.deposit(100)

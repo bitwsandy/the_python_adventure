@@ -31,18 +31,15 @@ class Boat(Vehicle):
         """Starts a boat by turning the throttle."""
         print("Turning the throttle to start the boat.")
 
-def start_vehicle(vehicle):
-    """Function to demonstrate polymorphism. It can start any type of vehicle."""
-    vehicle.start()
-
 # Example usage
 car = Car()
 bicycle = Bicycle()
 boat = Boat()
 
-vehicles = [car, bicycle, boat]
-for vehicle in vehicles:
-    start_vehicle(vehicle)
+car.start()
+bicycle.start()
+boat.start()
+
 
 ### Explanation
 # - Base Class (`Vehicle`):

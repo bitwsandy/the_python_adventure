@@ -51,3 +51,11 @@ del emp_1.fullname
 # Attempt to print full name and email after deletion
 print(emp_1.fullname)    # Outputs: None None
 print(emp_1.email)       # Will error out if accessed without checking for None values
+
+# Study Drill :
+# 1. Create a Student class,
+# attributes (rno, first name, last name, marks)
+# methods (display info, email, fullname)
+# create an instance of student, print(full_name and email_id)
+# First perform without property decorator
+# second time with property decorator

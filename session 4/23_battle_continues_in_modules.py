@@ -14,9 +14,10 @@ def main():
         # print("\nString Operations:")
         # print("Concatenation:", string_operations_module.concatenate_strings("Hello", "World"))
         # print("Concatenation:", string_operations_module.concatenate_strings("Hello", 123))  # Raises ValueError
-
     except ValueError as e:
-        print("Error:", e)
+        print("Error from main :", e)
+    except Exception as e:
+        print(f"Unknown Error Occured : {e}")
 
 if __name__ == "__main__":
     main()

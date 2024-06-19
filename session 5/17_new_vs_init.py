@@ -1,12 +1,14 @@
 class MyClass:
+    def __init__(self):
+        print("__init__ method is called")
+        self.attribute = "Initialized"
+
     def __new__(cls):
         print("__new__ method is called")
         instance = super().__new__(cls)  # Memory allocation
         return instance
 
-    def __init__(self):
-        print("__init__ method is called")
-        self.attribute = "Initialized"
+
 
 
 

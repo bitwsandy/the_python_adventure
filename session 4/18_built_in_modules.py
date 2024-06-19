@@ -6,10 +6,11 @@ import sys
 
 # Exercise 1: File Manipulation with os Module
 def list_files_in_directory(directory):
-    """List all the files in the specified directory."""
-    files = os.listdir(directory)
-    for file in files:
-        print(file)
+    if __name__ == '__main__' :
+        """List all the files in the specified directory."""
+        files = os.listdir(directory)
+        for file in files:
+            print(file)
 
 # Exercise 2: Date and Time Manipulation with datetime Module
 def calculate_date_difference(date1, date2):

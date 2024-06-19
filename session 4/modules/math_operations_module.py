@@ -21,6 +21,5 @@ def divide(x, y):
         result = x / y
         return result
     except ZeroDivisionError:
-        print("Error: Division by zero!|")
-        raise
+        print("Error in divide() from mathe_operations : Division by zero!|")
 

@@ -52,9 +52,9 @@ print(character1.total_characters)
 print(character2.total_characters)
 
 # calling class method
-# GameCharacter.reset_count()
-# character1.reset_count()
-# character2.reset_count()
+GameCharacter.reset_count()
+character1.reset_count()
+character2.reset_count()
 
 print(GameCharacter.total_characters)
 print(character1.total_characters)

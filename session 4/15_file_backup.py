@@ -1,7 +1,7 @@
 # 4. File Backup:
 #    Write a Python program that copies the contents of one file to another file,
 # creating a backup of the original file.
-
+print(__name__)
 source_file = "source.txt"
 backup_file = "backup.txt"
 

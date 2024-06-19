@@ -22,6 +22,7 @@ class Car:
 
 # Create an instance of the Car
 my_car = Car("Toyota", "Corolla", 2022)
+print(type(my_car))
 
 # Print details of my_car
 print(my_car.describe())  # Outputs: 2022 Toyota Corolla
