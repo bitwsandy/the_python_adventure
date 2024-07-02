@@ -2,7 +2,7 @@ import random
 
 # Generate a random number within a specified range
 low = 1
-high = 100
+high = 5
 random_number = random.randint(low, high)
 
 print("Welcome to the Guess the Number Game!")

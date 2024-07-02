@@ -1,8 +1,6 @@
 # string_operations.py
 import os
 def list_files_in_directory(directory):
-    print(__name__)
-    if __name__ == '__main__' :
         """List all the files in the specified directory."""
         files = os.listdir(directory)
         for file in files:
@@ -26,5 +24,4 @@ def count_vowels(s):
 #     except TypeError:
 #         return "Error: Cannot concatenate strings."
 
-print(list_files_in_directory("."))
 

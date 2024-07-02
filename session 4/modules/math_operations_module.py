@@ -20,6 +20,8 @@ def divide(x, y):
     try:
         result = x / y
         return result
-    except ZeroDivisionError:
-        print("Error in divide() from mathe_operations : Division by zero!|")
+    except Exception as e:
+        print(f"Error in divide() from math_operations_module : {e}")
+        raise
+
 

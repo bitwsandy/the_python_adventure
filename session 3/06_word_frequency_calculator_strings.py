@@ -3,6 +3,7 @@
 #   and counts the frequency of each word in the text.
 #   Print the word frequencies in descending order.
 
+# Dictionaries
 
 paragraph = input("Enter a paragraph of text: ")
 words = paragraph.split()

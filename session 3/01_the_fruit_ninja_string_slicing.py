@@ -20,7 +20,6 @@ my_string = "Hello, World!"
 print(my_string[0])   # Output: H
 print(my_string[7])   # Output: W
 
-
 # 2. Slicing Substrings :
 
 my_string = "Hello, World!"
@@ -33,6 +32,7 @@ print(my_string[7:12])    # Output: World
 my_string = "Hello, World!"
 print(my_string[:5])      # Output: Hello
 print(my_string[7:])      # Output: World!
+
 
 
 # 4. Using Negative Indices :
@@ -102,3 +102,21 @@ my_string = "Hello, World!"
 start = 2
 end = 8
 print(my_string[start:end])  # Output: llo, W
+
+
+# Study Drills :
+
+# Print World using positive indexes
+print(my_string[7:12])
+# Print world using negative indexes
+print(my_string[-6:-1])
+# Print Hello by skipping one index
+print(my_string[0:5:2])
+my_string = "Hello, World!"
+# print World in reverse order using positive indexes
+print(my_string[11:6:-1])
+# print World in reverse order using negative indexes
+print(my_string[-2:-7:-1])
+# Print complete string reverse by skipping two places
+my_string = "Hello, World!"
+print(my_string[::-3])

@@ -31,13 +31,11 @@ https://www.nasa.gov
 
 """
 sentence = 'Start a sentence and then bring it to an end'
-
-pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
-
+pattern = re.compile(r'at')
 matches = pattern.finditer(text)
 
 for match in matches :
-    print(match.group(0))
+    print(match)
 
 # Study Drills :
 # 1. Match all three digits : r'\d\d\d'
@@ -55,11 +53,12 @@ for match in matches :
 # 13. Match all Mr, Mr. and Initial capital letter in front of it : r'Mr\.?\s[A-Z]'
 # 14. Match all Mr, Mr. and name in front of it (except single char name) : r'Mr.\?\s[A-Z]\w+'
 # 15. Match all Mr, Mr. and name in front of it (except single char name) : r'Mr.\?\s[A-Z]\w*'
-# 16. Match all Mr, Mr., Mrs., Mrs, Ms, Ms. and name in front of it : r'(Mr|Ms|Mrs).\?\s[A-Z]\w*'
+# 16. Match all Mr, Mr., Mrs., Mrs, Ms, Ms. and name in front of it : r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*'
 # 17. Match all emails with small and capital letters , @ , letters , .com : r'[a-zA-Z]+@[a-zA-Z]+\.com'
 # 18. Allow . in first part of email : r'[a-zA-Z.]+@[a-zA-Z]+\.com'
 # 19. Allow .edu as the last part of email : r'[a-zA-Z.]+@[a-zA-Z]+\.(com|edu)'
 # 20. Allow 0-9 digits and - in first part of email and domain and .net as extension: r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)'
-# 21. Write regular expression to match the URLs : r'https?://(www\.)?(\w+)(\.\w+)'
-# 22. Print group(0), group(1), group(2), group(3)
+# 21. Match all email ids with domain name length raning from 3 to 5 characters : r'\w+@\w+\.[a-z]{3,5}'
+# 22. Write regular expression to match the URLs : r'https?://(www\.)?(\w+)(\.\w+)'
+# 23. Print group(0), group(1), group(2), group(3)
 
