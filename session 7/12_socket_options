@@ -1,0 +1,135 @@
+The `setsockopt` method in the `socket` module allows you to configure various options at different levels to control the behavior of sockets. The options can be divided into three levels: socket level (`SOL_SOCKET`), protocol-specific level (like `IPPROTO_TCP` for TCP or `IPPROTO_IP` for IP), and IP level (like `IPPROTO_IPV6` for IPv6).
+
+### Common Socket Options (`SOL_SOCKET`)
+
+- `SO_BROADCAST`: Enables or disables the transmission of broadcast messages on the socket.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+
+
+- `SO_DEBUG`: Enables or disables recording of debugging information.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_DEBUG, 1)
+
+
+- `SO_DONTROUTE`: Bypasses the normal routing and sends messages directly to the network interface.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_DONTROUTE, 1)
+
+
+- `SO_KEEPALIVE`: Enables or disables keepalive messages on the socket.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+
+
+- `SO_LINGER`: Specifies whether the socket should linger on close if data is present.
+
+  linger = struct.pack('ii', 1, 10)  # Linger active, 10-second timeout
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, linger)
+
+
+- `SO_OOBINLINE`: Specifies whether out-of-band data should be received in the normal data stream.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_OOBINLINE, 1)
+
+
+- `SO_RCVBUF`: Sets the size of the socket's receive buffer.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 4096)
+
+
+- `SO_RCVLOWAT`: Sets the minimum number of bytes to process for socket input operations.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVLOWAT, 1)
+
+
+- `SO_REUSEADDR`: Allows the socket to bind to an address that is already in use.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+
+- `SO_SNDBUF`: Sets the size of the socket's send buffer.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 4096)
+
+
+- `SO_SNDLOWAT`: Sets the minimum number of bytes to process for socket output operations.
+
+  server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDLOWAT, 1)
+
+
+- `SO_TYPE`: Gets the socket type (used with `getsockopt`).
+
+  socket_type = server_socket.getsockopt(socket.SOL_SOCKET, socket.SO_TYPE)
+
+
+### Protocol-Specific Options
+
+#### TCP Options (`IPPROTO_TCP`)
+
+- `TCP_NODELAY`: Disables the Nagle algorithm for send coalescing. This option is typically used to improve the performance of small, frequent sends.
+
+  server_socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+
+
+#### IP Options (`IPPROTO_IP`)
+
+- `IP_TTL`: Sets the time-to-live (TTL) field for IP packets sent from this socket.
+
+  server_socket.setsockopt(socket.IPPROTO_IP, socket.IP_TTL, 64)
+
+
+- `IP_MULTICAST_TTL`: Sets the TTL for multicast packets.
+
+  server_socket.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
+
+
+- `IP_MULTICAST_LOOP`: Controls whether multicast packets sent from the socket are looped back to the local socket.
+
+  server_socket.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_LOOP, 1)
+
+
+#### IPv6 Options (`IPPROTO_IPV6`)
+
+- `IPV6_V6ONLY`: Restricts the socket to IPv6 communications only.
+
+  server_socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 1)
+
+
+### Example Usage
+
+Here’s an example that demonstrates setting several socket options:
+
+
+import socket
+import struct
+
+# Create a socket object
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Set socket options
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+server_socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+
+# Optionally, set the linger option to wait for 10 seconds before closing if there is unsent data
+linger = struct.pack('ii', 1, 10)  # Linger active, 10-second timeout
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, linger)
+
+# Bind the socket to an address and port
+server_socket.bind(('0.0.0.0', 22))  # 0.0.0.0 means listen on all network interfaces
+
+# Start listening for incoming connections
+server_socket.listen(100)  # The argument specifies the maximum number of queued connections
+
+print("Server listening on port 22")
+
+# Accept incoming connections
+while True:
+    client_socket, client_address = server_socket.accept()
+    print(f"Connection from {client_address}")
+    # Handle the connection with client_socket
+    client_socket.close()
+
+
+These options provide flexibility to tune the behavior of your sockets to better match your application's requirements.

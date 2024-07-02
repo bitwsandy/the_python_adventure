@@ -74,6 +74,32 @@ def start_server():
     #       connections, which are used in SSH (Secure Shell) connections.
 
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+    # server_socket.setsockopt: This method is used to set a socket option.
+
+    # socket.SOL_SOCKET:
+    #       This specifies the level at which the option is defined.
+    #       SOL_SOCKET refers to socket-level options.
+
+    # socket.SO_REUSEADDR:
+    #       This specifies the option name.
+    #       SO_REUSEADDR is a socket option that allows a socket to bind to an address
+    #       that is already in use. It is useful in scenarios where you want to
+    #       quickly restart a server that was previously bound to a specific port
+    #       without waiting for the socket to be fully closed and released by the
+    #       operating system.
+    # By setting the SO_REUSEADDR option, you allow the socket to be reused, which is
+    # particularly useful in the following situations:
+    # Server Restart:
+    #       When you stop and restart a server, the port it was using might still be
+    #       considered "in use" by the operating system. Setting this option allows
+    #       the server to rebind to the same port immediately.
+    # Multiple Instances:
+    #       In some cases, you might have multiple instances of an application that
+    #       need to bind to the same port (e.g., multicast applications).
+
+    # 1: This is the value for the option. Setting this to 1 enables the SO_REUSEADDR option.
+
     server_socket.bind(('0.0.0.0', 2200))  # Bind to all interfaces on port 2200
     server_socket.listen(100)
     print('Listening for connection ...')
