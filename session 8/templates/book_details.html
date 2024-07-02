@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>{{ book.title }} by {{ book.author }}</h2>
+<h3>Reviews:</h3>
+{% if book.reviews %}
+<ul>
+    {% for review in book.reviews %}
+    <li>{{ review }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No reviews yet.</p>
+{% endif %}
+<form method="post">
+    <label for="review">Add a review:</label>
+    <textarea id="review" name="review" required></textarea>
+    <button type="submit">Submit Review</button>
+</form>
+{% endblock %}

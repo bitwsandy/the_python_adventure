@@ -1,0 +1,22 @@
+- Handling forms is a fundamental aspect of web development, allowing user
+  interaction and data collection.
+- Flask simplifies form handling with easy methods to manage form submissions and
+  data retrieval.
+
+Introduction to Forms in Flask
+
+How to Handle Forms in Flask:
+    - Flask can handle form data sent via GET or POST methods.
+    - The form data is accessible through the request object provided by Flask.
+        - GET Method:
+                - Typically used for searching and retrieving data.
+                - Data sent via GET is visible in the URL.
+        - POST Method:
+                - Used for sending data securely to the server as it does not appear
+                  in the URL.
+                - This method is preferred for forms where data needs to be modified
+                  or added.
+
+Retrieving Form Data:
+    - GET: Data is retrieved from request.args.
+    - POST: Data is retrieved from request.form.

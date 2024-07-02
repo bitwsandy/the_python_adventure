@@ -1,0 +1,14 @@
+
+- Routing in a web application refers to determining what code should run when
+  a user visits a specific URL.
+- In Flask, this is managed using the app.route() decorator, which connects URLs to
+  Python functions.
+- This allows for creating a responsive web application where different URLs can lead
+  to different content.
+
+# Understanding the app.route() Decorator
+- The app.route() decorator in Flask is used to bind a URL to a Python function.
+- For example, when a user visits a URL, Flask checks if the URL matches any routes
+  that have been defined.
+- If it does, the corresponding function is executed, and its return value is sent
+  back to the browser as a response.

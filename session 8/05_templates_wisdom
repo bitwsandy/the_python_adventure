@@ -1,0 +1,34 @@
+- Templates are a powerful feature of Flask that allow for dynamic content generation.
+- They make it easy to separate the design from Python code, which enhances
+  organization and maintainability.
+- Flask uses Jinja2 as its templating engine.
+
+Introduction to Jinja2 Templating (10 minutes)
+    - Jinja2 is a modern and designer-friendly templating language for Python, modeled after Django’s templates. It is fast, widely used, and secure. With Jinja2, you can use conditional statements, loops, and filters to dynamically generate HTML content from templates.
+
+Why Use Templates?
+
+    - Separation of Concerns:
+        - Templates allow you to separate business logic from presentation, making your
+          code cleaner and more maintainable.
+
+    - Reusability:
+        - You can reuse the same template in different parts of your application with
+          different data.
+
+    - Simplification:
+        - Templates simplify the process of making complex HTML dynamically with
+          variables and control structures.
+
+
+Basic Syntax:
+
+    - Variables can be used with {{ variable_name }}.
+    - Control structures like for-loops and conditions are used with
+      {% for item in list %} and {% if user %}.
+
+Starting Up :
+    - Ensure that you have a templates folder in the root directory of your Flask
+      application, and that it is spelled correctly as templates.
+    - This folder should be at the same level as your app.py file, not nested inside
+      another directory unless explicitly configured to be so.

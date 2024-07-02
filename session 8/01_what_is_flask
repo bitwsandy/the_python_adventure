@@ -1,0 +1,49 @@
+# What is Flask?
+    - Flask is a popular Python web framework designed for building web applications.
+    - It belongs to a category of software known as "web frameworks," which are tools
+      that provide functionalities to develop websites quickly and easily,
+      handling everything from simple web pages to complex web services.
+
+# Understanding Web Frameworks
+        A web framework provides a structured way to build web applications. It offers libraries and modules which simplify common web development tasks such as:
+            - Routing URLs to appropriate handler functions
+            - Managing user sessions
+            - Interacting with databases
+            - Rendering HTML templates
+
+# Flask's Role in Web Development
+        - Flask is categorized as a "micro-framework" because it aims to keep the core
+          simple but extensible.
+        - It provides basic tools and libraries that you need to build an application,
+          but it doesn't enforce a project or database layout.
+        - This minimalistic approach makes Flask flexible and easy to adapt to
+          developers’ needs, which is particularly useful for small projects or when
+          learning web development.
+        - However, it can also scale up to complex applications through extensions
+          that add additional functionalities like form validation,
+          user authentication, and more.
+
+# Key Characteristics of Flask
+        - Lightweight:
+                - Flask comes with only essential tools to get a web app up and running,
+                  making it very lightweight.
+                - This means you can add other tools and libraries according to the
+                  project's requirements.
+        - Modular:
+                - Flask's design is modular; you can include various extensions to add
+                  features such as database integration, form validation, upload
+                  management, and more.
+        - Flexibility:
+                - Due to its simplicity and minimal design, it provides a lot of
+                  flexibility, allowing you to use the components you want and integrate
+                  with other libraries easily.
+        - Ease of Use:
+                - Flask is known for its ease of use and quick setup, making it ideal
+                  for beginners in web development.
+
+    By choosing Flask, developers can start with the simplest components and
+gradually scale up to full-fledged applications using numerous extensions available
+in the ecosystem.
+
+    This makes it an excellent choice for both small projects and large-scale
+applications alike.
