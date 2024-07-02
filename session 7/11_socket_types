@@ -1,0 +1,62 @@
+In the context of the `socket` module in Python,
+
+1. `SOCK_STREAM` : Is used to specify a stream socket, which provides sequenced, reliable, two-way, connection-based byte streams (TCP). There are several other socket types you can use depending on the nature of the communication you want to establish.
+
+
+2. `SOCK_DGRAM`: This specifies a datagram socket, which provides connectionless, unreliable messages (UDP). Each message is sent individually and is checked for integrity upon arrival. Datagrams are suitable for applications that require speed and efficiency over reliability.
+
+   server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+
+3. `SOCK_RAW`: This specifies a raw socket, which provides access to the underlying transport provider. Raw sockets allow direct sending and receiving of IP packets without any protocol-specific transport layer formatting. This is used for custom protocols or for network analysis and monitoring tools.
+
+   server_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW)
+
+
+4. `SOCK_SEQPACKET`: This specifies a sequenced packet socket, which provides a connection-oriented, reliable, message-based communication. This is similar to `SOCK_STREAM`, but messages are preserved as they are sent. This type is not commonly used in standard network programming and is more often used in specialized communication requirements.
+
+   server_socket = socket.socket(socket.AF_INET, socket.SOCK_SEQPACKET)
+
+
+5. `SOCK_RDM`: This specifies a reliably-delivered message socket, which is a connectionless socket that guarantees message delivery. However, it is not widely implemented.
+
+   server_socket = socket.socket(socket.AF_INET, socket.SOCK_RDM)
+
+
+Each of these socket types is suited for different types of communication:
+
+- `SOCK_STREAM` (TCP): Use this for reliable, connection-based communication where data must arrive in the same order it was sent.
+- `SOCK_DGRAM` (UDP): Use this for fast, connectionless communication where occasional loss of data is acceptable.
+- `SOCK_RAW`: Use this for low-level network access, such as implementing custom protocols or network monitoring.
+- `SOCK_SEQPACKET`: Use this for reliable, connection-oriented communication where messages must be preserved.
+- `SOCK_RDM`: Use this for connectionless communication with guaranteed message delivery (rarely used).
+
+Here are examples of how each type might be used:
+
+# Example for `SOCK_DGRAM` (UDP):
+
+import socket
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server_socket.bind(('0.0.0.0', 12345))
+
+while True:
+    data, addr = server_socket.recvfrom(1024)
+    print(f"Received message: {data} from {addr}")
+    server_socket.sendto(b"Reply", addr)
+
+
+# Example for `SOCK_RAW` (Raw Socket):
+
+import socket
+
+# Requires administrative privileges
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_ICMP)
+server_socket.bind(('0.0.0.0', 0))
+
+while True:
+    packet, addr = server_socket.recvfrom(65535)
+    print(f"Received packet from {addr}")
+
+
+Each socket type has specific use cases and is chosen based on the requirements of the application.

@@ -1,0 +1,63 @@
+1. What is a Network?
+        - A network is a group of computers and other devices connected to each other to
+          share resources electronically.
+        - Networks can range from a small home setup with a few devices to massive, global
+          internet.
+
+
+2. IP Addresses and Ports
+        - IP Address:
+              This is a unique identifier assigned to each device on a network. It's like
+              the address of a house on the internet. There are two types of IP addresses:
+        - IPv4:
+                An IP address in this category looks like `192.168.1.1`.
+        - IPv6:
+                A newer format that looks like `2001:0db8:85a3:0000:0000:8a2e:0370:7334`.
+        - Port:
+                A port is a numerical value used to uniquely identify different services
+                on a single device using IP. For example, web servers usually use port 80
+                for HTTP.
+
+3. TCP/IP Protocol
+        - TCP (Transmission Control Protocol):
+                This is a fundamental protocol for network communication that ensures
+                reliable, ordered, and error-checked delivery of a stream of bytes between
+                applications running on hosts communicating via an IP network. TCP is used
+                by SSH for its reliability.
+        - IP (Internet Protocol): This protocol handles addressing and routing the data
+                packets from sender to receiver. TCP works with IP, which is why they are
+                often mentioned together as TCP/IP.
+
+4. SSH (Secure Shell)
+        - SSH is a protocol that provides a secure way to access a network service over an
+          unsecured network. It uses encryption to secure the connection from eavesdropping,
+          connection hijacking, and other attacks.
+        - Key Features:
+            - Authentication: Verifying the identity of the connected party.
+            - Encryption: Keeping the data confidential during transmission.
+            - Integrity: Ensuring the data is not altered in transit.
+
+5. Public Key Cryptography
+        - This type of cryptography uses a pair of keys for encryption:
+                - A public key and a private key.
+                - The public key can be shared with anyone, while the private key must be
+                  kept secret.
+        - In the context of SSH and Paramiko, public key cryptography is used for
+          authenticating users and hosts, ensuring that only authorized users can access
+          the server.
+
+
+6. Client-Server Model
+        - In this model, "clients" request services from "servers". For instance,
+          an SSH client like Paramiko might request to execute commands on an SSH server.
+        - The server listens on a network address for incoming requests
+          (e.g., IP address plus a port number like 22 for SSH) and responds to them.
+
+
+7. Using Paramiko
+        - Paramiko as a Client:
+            - It can connect to an SSH server, authenticate (either by password or using keys)
+              , and execute commands or transfer files.
+        - Paramiko as a Server:
+            - Rarely, but it can be configured to act as an SSH server to accept connections
+              and manage commands or file transfers from clients.
