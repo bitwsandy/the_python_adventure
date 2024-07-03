@@ -2,18 +2,18 @@
 # Care must be taken to manage the complexity and avoid conflicts, such as the diamond problem.
 
 class Mother:
-    def skills(self):
+    def mothers_skills(self):
         print("Driving, Art")
 
 class Father:
-    def skills(self):
+    def fathers_skills(self):
         print(f"Gardening, Programming")
 
 class Child(Mother, Father):  # Inherits from both Father and Mother
     def skills_child(self):
-        Father.skills(self)
-        Mother.skills(self)
-        print("Sports")
+        Father.fathers_skills(self)
+        self.mothers_skills()
+        self.fathers_skills()
 # self can be used to access methods from parent classes within the child class method. This is
 # done by explicitly calling the parent class method with self as the argument, like
 # Father.skills(self) and Mother.skills(self). By passing self, you ensure that the
@@ -22,8 +22,9 @@ class Child(Mother, Father):  # Inherits from both Father and Mother
 
 # Usage
 child = Child()
+child.mothers_skills()
+child.fathers_skills()
 child.skills_child()
-
 # Outputs:
 # Gardening, Programming
 # Cooking, Art

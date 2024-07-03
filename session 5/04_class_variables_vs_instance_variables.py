@@ -23,7 +23,7 @@ bike2 = Bicycle("Giant", "Defy Advanced")
 print(Bicycle.num_wheels)
 # print(Bicycle.make)
 print(bike1.make)
-print(bike1.num_wheels )
+print(bike1.num_wheels)
 
 # Accessing class variable using class and instances
 print(Bicycle.num_bicycles_created)

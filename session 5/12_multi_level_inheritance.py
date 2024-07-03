@@ -2,11 +2,12 @@
 # where features are passed down the lineage.
 
 class Grandfather:
-    def height(self):
+    def skills(self):
         print("Tall")
 
 class Father(Grandfather):  # Inherits from Grandfather
     def skills(self):
+        super().skills()
         print("Programming")
 
 class Son(Father):  # Inherits from Father
@@ -16,5 +17,4 @@ class Son(Father):  # Inherits from Father
 
 # Usage
 son = Son()
-son.height()  # Outputs: Tall
 son.skills()  # Outputs: Programming, Gaming
