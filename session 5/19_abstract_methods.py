@@ -7,7 +7,6 @@ class Employee(ABC):
 
     @abstractmethod
     def calculate_salary(self):
-        print(f"Printing Salary for : {self.name}")
         pass
     # It is possible to add code to an abstract method in an abstract base class, and still
     # require subclasses to override it. The code in the abstract method can be executed
@@ -26,7 +25,6 @@ class Manager(Employee):
         self.monthly_salary = monthly_salary
 
     def calculate_salary(self):
-        super().calculate_salary()
         return self.monthly_salary
 
 class Engineer(Employee):
@@ -36,7 +34,6 @@ class Engineer(Employee):
         self.hours_worked = hours_worked
 
     def calculate_salary(self):
-        super().calculate_salary()
         return self.hourly_rate * self.hours_worked
 
 class Salesperson(Employee):
@@ -46,7 +43,6 @@ class Salesperson(Employee):
         self.commission_rate = commission_rate
 
     def calculate_salary(self):
-        super().calculate_salary()
         return self.sales_amount * self.commission_rate
 
 # Create instances of different types of employees

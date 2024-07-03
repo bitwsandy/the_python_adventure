@@ -45,10 +45,9 @@ acc = Account("John")
 acc.deposit(100)
 acc.withdraw(50)
 acc.show_balance(160)  # Outputs: Current balance: 50
-# print(acc.__balance)
+
+# print(Account.__balance)
 # print(acc.__avg_hours_per_day())
-
-
 
 # Explanation:
 # - Private Attribute: `__balance` is a private attribute (denoted by two underscores).

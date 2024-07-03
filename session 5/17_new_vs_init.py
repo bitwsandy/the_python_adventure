@@ -9,9 +9,6 @@ class MyClass:
         return instance
 
 
-
-
-
 # Creating an instance of MyClass
 obj = MyClass()
 print(obj)

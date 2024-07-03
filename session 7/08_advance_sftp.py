@@ -1,6 +1,5 @@
 import paramiko
 
-
 def sftp_operations():
     # Server details
     ip = 'your_ssh_server_ip'

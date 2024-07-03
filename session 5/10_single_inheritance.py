@@ -2,6 +2,9 @@
 # a straightforward and easy-to-understand form of inheritance.
 
 class Animal:
+    def __init__(self, name):
+        self.__name = name
+
     def speak(self):
         print("Animal speaks")
 
