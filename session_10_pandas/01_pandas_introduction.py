@@ -12,11 +12,15 @@ import pandas as pd
 
 # Key Features of Pandas:
 
-# 1. Handling of data in different formats: The ability to read and write data in many formats such as CSV, Excel, SQL databases, and HDF5 format.
+# 1. Handling of data in different formats: The ability to read and write data in many
+# formats such as CSV, Excel, SQL databases, and HDF5 format.
+
 # Example of reading from a CSV file
 data = pd.read_csv('data/cr.txt')  # Ensure you have a file path or URL here
+print(data)
 
-# 2. Sophisticated Indexing: Offers indexed data manipulation. This includes support for automatic and explicit data alignment.
+# 2. Sophisticated Indexing: Offers indexed data manipulation.
+# This includes support for automatic and explicit data alignment.
 # Create a simple DataFrame
 df = pd.DataFrame({
     'A': range(1, 5),
@@ -30,19 +34,21 @@ df = pd.DataFrame({
 # Displaying the DataFrame
 print(df)
 
-# 3. Data alignment: Critical for data analysis and missing data handling. Pandas automatically aligns data based on labels.
+# 3. Data alignment: Critical for data analysis and missing data handling.
+# Pandas automatically aligns data based on labels.
 # Create another DataFrame to demonstrate alignment
 df2 = pd.DataFrame({
     'A': range(1, 6),
     'B': pd.date_range('20230101', periods=5)
 })
 
-# let's align and compare which dates are common in both DataFrames
-common_dates = df['B'].isin(df2['B'])
-print("Common dates between df and df2:\n", common_dates)
 
-# Print the aligned DataFrame
-print("Common Dates:\n", common_dates)
+# Using boolean indexing to find common dates
+common_dates = df[df['B'].isin(df2['B'])]['B']
+
+# Displaying the result
+print("\nCommon dates between df and df2:\n", common_dates)
+
 
 # 4. Powerful data manipulation tools for cleaning, filtering, and transforming data: Includes filling missing values, merging and joining data.
 # Example of merging two DataFrames

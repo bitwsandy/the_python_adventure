@@ -39,7 +39,7 @@ df['A'].fillna(value=df['A'].mean(), inplace=True)
 print("\nDataFrame after filling missing values in column 'A':\n", df)
 
 # Alternatively, you could drop rows with missing data (commented out for demonstration)
-# df.dropna(inplace=True)
+df.dropna(inplace=True)
 
 # This script demonstrates how to perform basic descriptive statistical analysis and handle missing data,
 # which are essential tasks in data cleaning and preparation for further analysis.

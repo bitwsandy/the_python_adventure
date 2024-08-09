@@ -7,8 +7,10 @@ def ssh_command(ip, port, user, key_file, cmd):
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     # By using AutoAddPolicy, your script will not fail due to unknown host keys;
     # it automatically trusts and stores keys from servers it connects to for the first time.
-    # While this is helpful for certain automation tasks (like when connecting to a large number
-    # of dynamically managed servers where keys may often change), it comes with a security risk
+    # While this is helpful for certain automation tasks
+    # (like when connecting to a large number
+    # of dynamically managed servers where keys may often change),
+    # it comes with a security risk
 
     try:
         # Using an RSA key instead of a password

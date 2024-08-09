@@ -1,0 +1,15 @@
+Web scraping in Python is the process of automatically collecting data from websites. Instead of manually copying and pasting information from a webpage, web scraping allows you to write a script (a small program) that does this for you.
+
+Here's how it works:
+
+1. Request the Webpage: Your Python script sends a request to the website's server, asking for the content of a specific webpage. This is like opening a webpage in your browser.
+
+2. Get the Content: The server responds by sending back the HTML content of the webpage, which your script receives.
+
+3. Extract Data: The script then looks through the HTML content to find the specific data you need. For example, you might want to extract all the titles of articles on a news website or the prices of products from an online store.
+
+4. Save the Data: Finally, the script saves the extracted data in a file or a database for you to use later.
+
+In Python, libraries like BeautifulSoup, requests, and Scrapy are commonly used for web scraping. These tools make it easier to navigate and extract data from web pages.
+
+Web scraping is useful for many tasks, such as collecting data for research, monitoring prices, or aggregating information from different sources. However, it's important to check the website's terms of service before scraping, as some websites do not allow it.
