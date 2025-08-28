@@ -1,0 +1,119 @@
+Spark Structured Streaming** is a scalable and fault-tolerant stream processing engine built on the Spark SQL engine. It allows users to express streaming computations the same way they would express batch computations on static data. Here's a breakdown of its core components: sources, sinks, and triggers.
+
+---
+
+1. Sources
+
+Sources are the input data streams that Spark Structured Streaming can read from. They provide the data that the streaming job will process. Some common sources include:
+
+- **File Sources**: Monitors directories for new files (e.g., JSON, CSV, Parquet) and processes them as they arrive.
+  
+  
+  df = spark.readStream.format("json").load("/path/to/directory")
+ 
+
+- **Apache Kafka**: Reads data from Kafka topics in real-time.
+
+  
+  df = spark.readStream \
+           .format("kafka") \
+           .option("kafka.bootstrap.servers", "host1:port1,host2:port2") \
+           .option("subscribe", "topic1") \
+           .load()
+  
+
+- Socket Source: Reads text data from a TCP socket. Useful for testing but not recommended for production.
+
+  
+  df = spark.readStream.format("socket").option("host", "localhost").option("port", 9999).load()
+  
+
+- Custom Sources: Users can implement custom sources by extending Spark's source interfaces.
+
+---
+
+2. Sinks
+
+Sinks are the destinations where the processed data is written to. After performing transformations and actions on the input data, the results are sent to these sinks. Common sinks include:
+
+- File Sinks: Writes output data to files in formats like Parquet, JSON, or CSV.
+
+  
+  query = df.writeStream.format("parquet").option("path", "/path/to/output").start()
+  
+
+- Console Sink: Prints output data to the console. Useful for debugging.
+
+ 
+  query = df.writeStream.format("console").start()
+  
+
+- Memory Sink: Stores output data in memory as an in-memory table. Also mainly for debugging.
+
+  
+  query = df.writeStream.format("memory").queryName("tableName").start()
+  spark.sql("SELECT * FROM tableName").show()
+  
+
+- **Apache Kafka**: Writes processed data back to Kafka topics.
+
+  
+  query = df.selectExpr("to_json(struct(*)) AS value") \
+            .writeStream \
+            .format("kafka") \
+            .option("kafka.bootstrap.servers", "host1:port1") \
+            .option("topic", "outputTopic") \
+            .start()
+ 
+
+- Foreach Sink: Allows custom handling of each output row using a function.
+
+  
+  def process_row(row):
+      # Custom processing logic
+      pass
+
+  query = df.writeStream.foreach(process_row).start()
+  
+
+- Custom Sinks: Similar to sources, users can implement custom sinks.
+
+---
+
+3. Triggers
+
+Triggers determine how often the streaming query processes data and produces results. They control the execution model of the streaming query. The main types of triggers are:
+
+- **Default (Micro-batch Processing)**: Spark processes the next batch as soon as the previous one has completed. This is the default behavior.
+
+  ```python
+  query = df.writeStream.trigger(processingTime='default').start()
+  ```
+
+- **Fixed Interval Micro-batches**: Processes data at fixed time intervals, regardless of the previous batch's completion.
+
+  ```python
+  query = df.writeStream.trigger(processingTime='10 seconds').start()
+  ```
+
+  In this example, Spark initiates a new micro-batch every 10 seconds.
+
+- **One-time Trigger**: Processes all available data once and then stops.
+
+  ```python
+  query = df.writeStream.trigger(once=True).start()
+  ```
+
+  Useful for backfilling historical data.
+
+- **Continuous Processing (Experimental)**: Aims for low-latency processing by continuously streaming data with minimal micro-batching.
+
+  ```python
+  query = df.writeStream.trigger(continuous='1 second').start()
+  ```
+
+  In this mode, Spark aims to process data and update results every second.
+
+---
+
+Understanding these components is crucial for designing effective streaming applications with Spark Structured Streaming. By selecting appropriate sources, sinks, and triggers, developers can tailor their streaming jobs to meet specific application requirements, whether it's real-time analytics, data integration, or ETL processes.
