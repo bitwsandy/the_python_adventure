@@ -1,5 +1,4 @@
 # Establish an SSH connection to a remote server and execute a simple command
-
 import paramiko
 
 def ssh_command(ip, port, user, key_file, cmd):
@@ -33,9 +32,9 @@ def ssh_command(ip, port, user, key_file, cmd):
 
 
 # Example usage
-ip = '18.223.164.180'  # or the appropriate IP address
+ip = '3.142.73.72'  # or the appropriate IP address
 port = 22  # or the appropriate port
-user = 'ec2-user' # your username on the server
+user = 'ubuntu' # your username on the server
 key_file = r'D:\aws_learning\credentials\tg-demo-server-private.pem'  # e.g., /home/yourname/.ssh/id_rsa
 cmd = 'ps'  # Command to execute
 

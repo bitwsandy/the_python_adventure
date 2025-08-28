@@ -13,3 +13,6 @@ elif side1 == side2 or side1 == side3 or side2 == side3:
     print("It's an isosceles triangle.")
 else:
     print("It's a scalene triangle.")
+
+
+

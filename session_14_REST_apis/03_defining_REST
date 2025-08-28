@@ -1,0 +1,47 @@
+ 1. Technical Definition:
+      - REST is an architectural style for designing networked
+        applications.
+      - It relies on a stateless, client-server communication protocol,
+        most commonly HTTP.
+      - In RESTful services, resources are identified by URLs, and they
+        are manipulated using standard HTTP methods such as
+        GET, POST, PUT, DELETE.
+      - The responses are typically in formats like JSON or XML.
+
+ 2. Simplified Definition:
+      - REST is a set of rules for how web services should communicate.
+      - It defines how systems can interact with each other over the web
+        in a simple, predictable way using standard web protocols like
+        HTTP.
+
+ 3. Developer-Friendly Definition:
+      - REST is a way to build APIs that is both easy to use and scalable.
+      - It uses URLs to identify resources and HTTP methods to interact
+        with them.
+      - By following REST principles, developers can create APIs that are
+        intuitive and work well across different platforms and devices.
+
+ 4. Business-Oriented Definition:
+      - REST is a framework that enables the creation of web services that
+        can easily be integrated into various applications.
+      - It allows businesses to expose their services over the internet
+        in a standardized way, facilitating integration with other services
+        and improving interoperability.
+
+ 5. Layman's Definition:
+      - REST is a method used to make web services talk to each other.
+      - It works by sending requests and getting responses over the web,
+        similar to how you browse websites, but for software applications.
+
+ 6. Academic Definition:
+      - REST is an architectural style defined by Roy Fielding in his
+        doctoral dissertation.
+      - It emphasizes a uniform interface, stateless interactions, and the
+        use of standard HTTP protocols for web-based communication between
+        clients and servers.
+
+ 7. Metaphorical Definition:
+      - REST is like a well-organized library where each book (resource)
+        has a specific place (URL), and you can use standard actions like
+        checking out, returning, or updating the books, all following a
+        clear and consistent set of rules.

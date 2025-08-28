@@ -1,0 +1,94 @@
+A REST API (Representational State Transfer Application Programming
+Interface) is like a set of rules that two programs follow to communicate
+over the web, much like how you might interact with a website.
+
+Let's continue with the restaurant analogy:
+
+Imagine the restaurant has a very organized way of handling orders.
+There are specific rules for how you should ask for something:
+- If you want to see the menu, you ask the waiter, "Can I see the menu?"
+  (This is like a GET request in a REST API, where you ask for some
+  information.)
+- If you want to order a dish, you tell the waiter exactly what you want.
+  (This is like a POST request, where you send new information or create
+  something.)
+- If you want to change your order, you tell the waiter to modify your
+  original request.
+  (This is like a PUT or PATCH request, where you update something.)
+- If you want to cancel an order, you tell the waiter to remove it.
+  (This is like a DELETE request, where you ask to delete something.)
+
+In this analogy:
+- The restaurant represents the server where the data or service lives.
+- The waiter is the REST API, following the specific rules of how to
+  handle your requests.
+
+REST APIs use these rules (GET, POST, PUT, DELETE) to ensure that your
+requests and the server's responses are consistent and predictable.
+This makes it easy for different programs to communicate over the web,
+even if they were created by different people or companies.
+
+
+
+To be considered a REST API, an API must follow a specific set of
+architectural principles and constraints.
+Here are the key rules that an API must adhere to in order to be called
+a REST API:
+
+ 1. Stateless
+   - Each request from the client to the server must contain all the
+     information needed to understand and process the request. The server
+     does not store any client context between requests. Each request is
+     independent and self-contained.
+
+ 2. Client-Server Architecture
+   - The client and server must be separate entities. The client handles
+     the user interface and the server manages the data and business
+     logic. This separation allows each part to evolve independently.
+
+ 3. Uniform Interface
+   - The communication between the client and server should be
+     standardized and consistent, which means that:
+     - Resource Identification:
+            - Resources (data or functionality) should be identified in
+              the request, typically via a URL (https://api.example.com/users/).
+
+              Here we should not have multiple endpoints,
+              (e.g url/createUsers, url/updateUsers, etc), endpoint should be one
+              as we can see in the example (url/users) and all requests
+              (GET, PUT/PATCH, DELETE) should be called on the single endpoint.
+
+              For example, `https://api.example.com/users/123`
+              identifies a user resource with the ID `123`.
+     - Resource Manipulation:
+            - Resources should be manipulated using standard HTTP methods:
+                - GET: Retrieve a resource.
+                - POST: Create a new resource.
+                - PUT: Update or replace a resource.
+                - PATCH: Partially update a resource.
+                - DELETE: Remove a resource.
+     - Self-Descriptive Messages:
+            - Each request and response should include enough information
+              to describe how to process it, often via HTTP headers
+              (e.g., content type).
+     - HATEOAS (Hypermedia As The Engine Of Application State):
+            - Responses should include links to related resources,
+              allowing the client to navigate through the API dynamically.
+            - For example, a response for a user might include a link to
+              that user’s list of orders.
+
+ 4. Layered System
+   - The architecture should be composed of layers, with each layer only
+     interacting with the layer immediately adjacent to it.
+   - For example, the client interacts with an intermediary server
+     (such as a load balancer or proxy) rather than directly with the
+     database.
+
+ 5. Cacheable
+   - Responses from the server should be explicitly marked as
+     cacheable or non-cacheable, so clients know whether they can reuse
+     prior responses to improve performance.
+
+        When an API adheres to these principles and constraints, it can be
+considered a RESTful API. REST is all about simplicity, scalability,
+and providing a uniform way to interact with resources via HTTP.

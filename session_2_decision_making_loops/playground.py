@@ -1,21 +1,28 @@
-limit = 10
-print("Prime numbers up to", limit, ":")
-for number in range(2, limit + 1):
-    #range(2,11) # 2,3,4,5,6,7,8,9,10
-    # number : 9
-    prime = True
-    if number < 2:
-        prime = False
-    else:
-        for i in range(2, int(number/2)+1):
-            # range(2, 5) : number = 9
-            if number % i == 0:
-                prime = False
-                break
-    if prime:
-        print(number, end=" ")
-    # 2 3 5 7
+import random
+
+# Rock / Paper / Scissor
+
+user_name = input("Enter your name : ")
+
+while True :
+    user_choice = input("Enter your choice [Rock, Paper, Scissor] : ")
+    if user_choice in ['Rock', 'Paper', 'Scissor'] :
+        break
+    else :
+        print("Invalid choice, Choices [Rock, Paper, Scissor]")
+
+print(f"The Choice of {user_name} : {user_choice}")
 
 
-for i in range(2, 4):
-    print(i)
+computer_choice = random.choice(['Rock', 'Paper', 'Scissors'])
+print(f"The Choice of Computer : {computer_choice}")
+
+
+if user_choice == computer_choice:
+    print("It's a tie!")
+elif (user_choice == 'Rock' and computer_choice == 'Scissors') or \
+     (user_choice == 'Paper' and computer_choice == 'Rock') or \
+     (user_choice == 'Scissors' and computer_choice == 'Paper'):
+    print(f"{user_name} win!")
+else:
+    print("Computer wins!")

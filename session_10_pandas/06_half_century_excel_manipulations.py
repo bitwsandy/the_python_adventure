@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 # Set display option to show all columns
 pd.set_option('display.max_columns', None)
 

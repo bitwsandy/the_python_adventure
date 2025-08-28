@@ -1,0 +1,19 @@
+An API, which stands for Application Programming Interface,
+is like a bridge that allows two different software programs to talk to
+each other.
+
+Imagine you are at a restaurant, and you want to order food. You don't go
+into the kitchen to prepare the food yourself. Instead, you look at the
+menu, choose what you want, and then tell the waiter.
+The waiter takes your order to the kitchen, and when the food is ready,
+the waiter brings it back to you.
+
+In this example:
+- You are the software program that wants something.
+- The kitchen is the other software that can give you what you need.
+- The waiter is the API, which takes your request, delivers it to the kitchen, and brings back the result.
+
+So, an API helps different software programs communicate and work
+together without you needing to know how the other software works
+internally. It’s a way for programs to request and exchange information
+easily.

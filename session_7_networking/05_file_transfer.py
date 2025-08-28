@@ -20,9 +20,9 @@ def download_file(sftp, remote_path, local_path):
     print(f"Downloaded {remote_path} to {local_path}")
 
 # Example usage
-ip = '18.223.164.180'  # or the appropriate IP address
+ip = '3.142.73.72'  # or the appropriate IP address
 port = 22  # or the appropriate port
-user = 'ec2-user' # your username on the server
+user = 'ubuntu' # your username on the server
 key_file = r'D:\aws_learning\credentials\tg-demo-server-private.pem'  # e.g., /home/yourname/.ssh/id_rsa
 
 
@@ -31,10 +31,10 @@ sftp = setup_sftp_session(ip, port, user, key_file)
 
 # Specify file paths
 local_upload_path = r'C:\Users\Sandeep\Desktop\data\cr.txt'
-remote_upload_path = r'/home/ec2-user/sample/cr_uploaded.txt'
+remote_upload_path = r'/home/ubuntu/sample/cr_uploaded.txt'
 
 local_download_path = r'C:\Users\Sandeep\Desktop\data\cr_downloaded.txt'
-remote_download_path = r'/home/ec2-user/sample/cr_uploaded.txt'
+remote_download_path = r'/home/ubuntu/sample/cr_uploaded1.txt'
 
 # Upload and download files
 upload_file(sftp, local_upload_path, remote_upload_path)
