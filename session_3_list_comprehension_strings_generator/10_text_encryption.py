@@ -8,18 +8,23 @@ text = input("Enter a string to encrypt: ")
 key = int(input("Enter an encryption key (integer): "))
 
 encrypted_text = ''
+# text = "Hello123"
 for char in text:
     # hello
     if char.isalpha():
         shift = ord('a') if char.islower() else ord('A')
         encrypted_char = chr((ord(char) - shift + key) % 26 + shift)
         encrypted_text += encrypted_char
+        # encrypted_text = encrypted_text + encrypted_char
     else:
         encrypted_text += char
 
 print("Encrypted text:", encrypted_text)
+#
 
+key = int(input(("Enter key for decryption : ")))
 decrypted_text = ''
+# Mjqqt
 for char in encrypted_text:
     if char.isalpha():
         shift = ord('a') if char.islower() else ord('A')
