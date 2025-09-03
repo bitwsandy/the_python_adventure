@@ -36,3 +36,11 @@ def greet(name, age, cno=777, email="NA", address="0"):
 
 
 greet(age=37, name="jane")
+
+
+
+def find_max(name, *nums):
+    print("Name : ", name)
+    return max(nums)
+
+print(find_max("John", 50, 75,))
