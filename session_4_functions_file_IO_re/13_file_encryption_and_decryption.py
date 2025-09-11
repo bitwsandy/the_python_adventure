@@ -22,23 +22,26 @@ def decrypt(text):
             decrypted_text += char
     return decrypted_text
 
-file_name = "example.txt"
+file_name = r"C:\Users\Sandeep\Desktop\data\wordcount.txt"
 
-# Encrypt the content of the file
-with open(file_name, "r") as file:
-    content = file.read()
-    encrypted_content = encrypt(content)
+# # Encrypt the content of the file
+# with open(file_name, "r") as file:
+#     content = file.read()
+#     encrypted_content = encrypt(content)
+#
+# # Write the encrypted content back to the file
+# with open(file_name, "w") as file:
+#     file.write(encrypted_content)
 
-# Write the encrypted content back to the file
-with open(file_name, "w") as file:
-    file.write(encrypted_content)
-
-# Decrypt the content of the file
+# # Decrypt the content of the file
 with open(file_name, "r") as file:
     content = file.read()
     decrypted_content = decrypt(content)
 
-print("Encrypted content:", encrypted_content)
+with open(file_name, "w") as file:
+    file.write(decrypted_content)
+#
+# print("Encrypted content:", encrypted_content)
 print("Decrypted content:", decrypted_content)
 
 
