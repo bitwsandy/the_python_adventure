@@ -1,33 +1,31 @@
-class Vector:
-    def __init__(self, x, y):
-        self.x = x  # x-coordinate
-        self.y = y  # y-coordinate
 
-    # Overloading the addition operator
-    def __add__(self, other):
-        if isinstance(other, Vector):
-            return Vector(self.x + other.x, self.y + other.y)
-        return NotImplemented
+class Car :
+    def __init__(self, name, make, color, mileage):
+        self.name = name
+        self.make = make
+        self.color = color
+        self.mileage = mileage
 
-    # Overloading the subtraction operator
-    def __sub__(self, other):
-        if isinstance(other, Vector):
-            return Vector(self.x - other.x, self.y - other.y)
-        return NotImplemented
+    def print_details(self):
+        print(self.name, self.make, self.color, self.mileage)
 
-    # Overloading the string representation method, for easy printing of the object
-    def __str__(self):
-        return f"Vector({self.x}, {self.y})"
 
-# Example usage:
-v1 = Vector(2, 3)
-v2 = Vector(5, 7)
+car1 = Car("Tiago", "TATA", "Orange", 20)
+# __init__(car1, "Tiago", "TATA", "Orange", 20 )
 
-# Add two vectors
-# res = (v1.x + v2.x)
-result = v1 + v2 # v1.__add__(v2)
-print(result)  # Outputs: Vector(7, 10)
+car2 = Car("Alto", "MS", "While", 20)
 
-# Subtract two vectors
-result = v1 - v2
-print(result)  # Outputs: Vector(-3, -4)
+# car1.print_details()
+Car.print_details(car1)
+
+car2.print_details()
+
+
+
+
+
+
+
+
+
+
