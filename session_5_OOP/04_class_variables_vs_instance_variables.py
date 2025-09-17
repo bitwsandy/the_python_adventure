@@ -1,49 +1,47 @@
-class Bicycle:
-    # Class variables
-    num_wheels = 2  # All bicycles typically have 2 wheels
-    num_bicycles_created = 0  # Counter for the number of Bicycle instances created
-
-    def __init__(self, make, model):
-        # Instance variables
+class Car :
+    num_wheels = 4
+    def __init__(self, name, make, color, mileage):
+        self.name = name
         self.make = make
-        self.model = model
-        # Increment the class variable using the class name
-        Bicycle.num_bicycles_created += 1
+        self.color = color
+        self.mileage = mileage
 
-    def display_info(self):
-        # Accessing class variable using self
-        print(f"Make : {self.make} ,Model : {self.model} has {self.num_wheels} wheels.")
+    def print_details(self):
+        print(self.name, self.make, self.color, self.mileage)
 
-# Create instances of Bicycle
-bike1 = Bicycle("Trek", "Emonda")
-bike2 = Bicycle("Giant", "Defy Advanced")
 
-# Class variables can be accessed directly using class or any of it's instance
-# However, instance variables can be accessed using respective instance only
-print(Bicycle.num_wheels)
-# print(Bicycle.make)
-print(bike1.make)
-print(bike1.num_wheels)
+car1 = Car("Tiago", "TATA", "Orange", 20)
+# __init__(car1, "Tiago", "TATA", "Orange", 20 )
 
-# Accessing class variable using class and instances
-print(Bicycle.num_bicycles_created)
-print(bike1.num_bicycles_created)
-print(bike2.num_bicycles_created)
+car2 = Car("Alto", "MS", "While", 20)
 
-# Updating value of class variable using instance
-bike2.num_wheels = 3
-print(Bicycle.num_wheels)
-print(bike1.num_wheels)
-print(bike2.num_wheels)
 
-# Updating value of class variable using class
-Bicycle.num_wheels = 3
-print(Bicycle.num_wheels)
-print(bike1.num_wheels)
-print(bike2.num_wheels)
+# # Accessing class variable using instance and class
+# print(car1.num_wheels)
+# print(car2.num_wheels)
+# print(Car.num_wheels)
 
-# Display total bicycles created using a class method
-print(f"Total bicycles created: {Bicycle.num_bicycles_created}")  # Outputs: Total bicycles created: 2
+# # Accessing Instance variable using instance and class
+# print(car1.name)
+# print(car2.name)
+# # print(Car.name) # Instance variables cannot be accessed using Class
+
+# # Modify class variable using instance and class
+# car1.num_wheels = 8
+# print(car1.num_wheels)
+# print(car2.num_wheels)
+# print(Car.num_wheels)
+
+# # Modify class variable using instance and class
+# Car.num_wheels = 8
+# print(car1.num_wheels)
+# print(car2.num_wheels)
+# print(Car.num_wheels)
+
+# Modify Instance variable using instance
+car1.print_details()
+car1.name = "TiagoXZ"
+car1.print_details() # Outputs: Total bicycles created: 2
 
 # Class variables : Variables that are shared among all instances (objects) of a class.
 # They are defined within the class definition but outside of any instance methods.
