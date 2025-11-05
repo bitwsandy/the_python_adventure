@@ -1,0 +1,4 @@
+2025-11-05 20:20:17,129 INFO [root] this goes to app.log (not the console)
+2025-11-05 20:20:17,129 ERROR [root] this too
+2025-11-05 20:20:41,844 INFO [root] this goes to app.log (not the console)
+2025-11-05 20:20:41,845 ERROR [root] this too
