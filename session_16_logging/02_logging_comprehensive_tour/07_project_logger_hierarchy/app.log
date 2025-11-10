@@ -1,0 +1,22 @@
+2025-11-10 19:02:16,811 - app.main - INFO - Program started.
+2025-11-10 19:02:16,812 - app.utils - INFO - utils.multiply: starting ...
+2025-11-10 19:02:16,812 - app.utils - DEBUG - utils.multiply: received x=4, y=5
+2025-11-10 19:02:16,812 - app.utils - INFO - utils.multiply: finished → 20
+2025-11-10 19:02:16,812 - app.utils - INFO - utils.multiply: starting ...
+2025-11-10 19:02:16,812 - app.utils - DEBUG - utils.multiply: received x=7, y=-2
+2025-11-10 19:02:16,812 - app.utils - WARNING - utils.multiply: negative result detected: -14
+2025-11-10 19:02:16,812 - app.utils - INFO - utils.multiply: finished → -14
+2025-11-10 19:02:16,812 - app.main - INFO - Program finished.
+2025-11-10 19:11:59,096 - app.main - INFO - Program started.
+2025-11-10 19:11:59,096 - app.main - INFO - Program finished.
+2025-11-10 19:12:18,615 - app.main - INFO - Program started.
+2025-11-10 19:12:18,615 - app.utils - INFO - utils.multiply: starting ...
+2025-11-10 19:12:18,615 - app.utils - DEBUG - utils.multiply: received x=4, y=5
+2025-11-10 19:12:18,615 - app.utils - INFO - utils.multiply: finished → 20
+2025-11-10 19:12:18,615 - app.utils - INFO - utils.multiply: starting ...
+2025-11-10 19:12:18,615 - app.utils - DEBUG - utils.multiply: received x=7, y=-2
+2025-11-10 19:12:18,615 - app.utils - WARNING - utils.multiply: negative result detected: -14
+2025-11-10 19:12:18,616 - app.utils - INFO - utils.multiply: finished → -14
+2025-11-10 19:12:18,616 - app.main - INFO - Program finished.
+2025-11-10 19:15:18,663 - app.main - INFO - Program started.
+2025-11-10 19:15:18,665 - app.main - INFO - Program finished.
