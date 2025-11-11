@@ -1,0 +1,31 @@
+version: 1
+
+root:
+  level: INFO
+  handlers: [console, file]
+
+
+formatters:
+  standard:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: standard
+    filename: app.log
+    encoding: utf-8
+
+
+loggers:
+  utils:
+    level: DEBUG       # utils will log DEBUG to file
+    propagate: true    # send logs up to root handlers
