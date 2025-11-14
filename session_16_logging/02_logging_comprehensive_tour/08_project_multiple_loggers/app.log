@@ -1,0 +1,13 @@
+2025-11-10 19:28:41,306 - __main__ - INFO - Program started.
+2025-11-10 19:28:41,307 - utils - INFO - Starting multiplication...
+2025-11-10 19:28:41,307 - utils - DEBUG - Inputs: x=3, y=4
+2025-11-10 19:28:41,307 - utils - INFO - Result of 3 * 4 = 12
+2025-11-10 19:28:41,307 - utils - INFO - Multiplication completed.
+
+2025-11-10 19:28:41,307 - utils - INFO - Starting multiplication...
+2025-11-10 19:28:41,307 - utils - DEBUG - Inputs: x=10, y=-5
+2025-11-10 19:28:41,307 - utils - INFO - Result of 10 * -5 = -50
+2025-11-10 19:28:41,307 - utils - WARNING - Negative result detected → check inputs.
+2025-11-10 19:28:41,307 - utils - INFO - Multiplication completed.
+
+2025-11-10 19:28:41,307 - __main__ - INFO - Program finished.

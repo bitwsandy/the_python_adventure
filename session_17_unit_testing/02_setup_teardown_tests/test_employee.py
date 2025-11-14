@@ -18,27 +18,27 @@ from employee import Employee
 # --------------------------------------------------------------
 # A. Manual creation tests (no setUp/tearDown)
 # --------------------------------------------------------------
-class TestEmployee_Manual(unittest.TestCase):
-    """Manual construction per test (clear but repetitive).
-    Use when each test needs bespoke setup different from others.
-    """
-
-    def test_fullname_manual(self):
-        print("\n[TestEmployee_Manual.test_fullname_manual] running")
-        emp = Employee("Sandeep", "Patil", 50000)
-        self.assertEqual(emp.fullname(), "Sandeep Patil")
-
-    def test_email_manual(self):
-        print("\n[TestEmployee_Manual.test_email_manual] running")
-        emp = Employee("Sandeep", "Patil", 50000)
-        self.assertEqual(emp.email(), "sandeep.patil@company.com")
-
-    def test_apply_raise_manual(self):
-        print("\n[TestEmployee_Manual.test_apply_raise_manual] running")
-        emp = Employee("Sandeep", "Patil", 50000)
-        # Default class raise = 1.10 (10%)
-        emp.apply_raise()
-        self.assertEqual(emp.salary, 55000.0)
+# class TestEmployee_Manual(unittest.TestCase):
+#     """Manual construction per test (clear but repetitive).
+#     Use when each test needs bespoke setup different from others.
+#     """
+#
+#     def test_fullname_manual(self):
+#         print("\n[TestEmployee_Manual.test_fullname_manual] running")
+#         emp = Employee("Sandeep", "Patil", 50000)
+#         self.assertEqual(emp.fullname(), "Sandeep Patil")
+#
+#     def test_email_manual(self):
+#         print("\n[TestEmployee_Manual.test_email_manual] running")
+#         emp = Employee("Sandeep", "Patil", 50000)
+#         self.assertEqual(emp.email(), "sandeep.patil@company.com")
+#
+#     def test_apply_raise_manual(self):
+#         print("\n[TestEmployee_Manual.test_apply_raise_manual] running")
+#         emp = Employee("Sandeep", "Patil", 50000)
+#         # Default class raise = 1.10 (10%)
+#         emp.apply_raise()
+#         self.assertEqual(emp.salary, 55000.0)
 
 
 # --------------------------------------------------------------
@@ -48,76 +48,76 @@ class TestEmployee_WithSetup(unittest.TestCase):
     """Demonstrate setUp/tearDown (runs before/after EVERY test method).
     Use when many tests share similar objects/config.
     """
-
-    @classmethod
-    def setUpClass(cls):
-        # setUpClass runs ONCE before any tests in this class.
-        # Good for expensive fixtures (DB connections, temp dirs, etc.)
-        print("\n=== [TestEmployee_WithSetup.setUpClass] START CLASS FIXTURE ===")
-
-    @classmethod
-    def tearDownClass(cls):
-        # tearDownClass runs ONCE after all tests in this class.
-        print("=== [TestEmployee_WithSetup.tearDownClass] END CLASS FIXTURE ===")
-
-    def setUp(self):
-        # setUp runs BEFORE EACH test method
-        print(f"\n[setUp] preparing fresh employees for: {self.id()}")
-        self.emp1 = Employee("Alice", "Smith", 60000)
-        self.emp2 = Employee("Bob", "Brown", 45000)
-
-    def tearDown(self):
-        # tearDown runs AFTER EACH test method
-        print(f"[tearDown] cleaning up after: {self.id()}")
-        # If you had open files or patches, you would restore/close here.
-        del self.emp1
-        del self.emp2
-
-    # ----- Tests below automatically get fresh emp1/emp2 each time -----
-
-    def test_fullname_updates_when_names_change(self):
-        print("[test_fullname_updates_when_names_change] running")
-        self.assertEqual(self.emp1.fullname(), "Alice Smith")
-        # Scenario: user updates name; fullname should reflect latest state
-        self.emp1.firstname = "Alicia"
-        self.emp1.lastname = "Smyth"
-        self.assertEqual(self.emp1.fullname(), "Alicia Smyth")
-
-    def test_email_reflects_current_names(self):
-        print("[test_email_reflects_current_names] running")
-        self.assertEqual(self.emp2.email(), "bob.brown@company.com")
-        # Scenario: after marriage, last name changes → email() should reflect
-        self.emp2.lastname = "Williams"
-        self.assertEqual(self.emp2.email(), "bob.williams@company.com")
-
-    def test_apply_raise_uses_class_attribute_and_is_overridable(self):
-        print("[test_apply_raise_uses_class_attribute_and_is_overridable] running")
-        # Save original to restore later (important in shared test environments)
-        original_raise = Employee.salary_raise
-        # Use addCleanup to guarantee restoration even if the test fails halfway
-        self.addCleanup(lambda: setattr(Employee, "salary_raise", original_raise))
-
-        # Temporarily change the CLASS raise percentage for this test
-        Employee.salary_raise = 1.20  # 20% raise for this scenario
-        self.emp1.apply_raise()
-        self.assertEqual(self.emp1.salary, 72000.0)  # 60000 * 1.20
-
-        # Another employee should also honor the updated class attribute
-        self.emp2.apply_raise()
-        self.assertEqual(self.emp2.salary, 54000.0)  # 45000 * 1.20
+    #
+    # @classmethod
+    # def setUpClass(cls):
+    #     # setUpClass runs ONCE before any tests in this class.
+    #     # Good for expensive fixtures (DB connections, temp dirs, etc.)
+    #     print("\n=== [TestEmployee_WithSetup.setUpClass] START CLASS FIXTURE ===")
+    #
+    # @classmethod
+    # def tearDownClass(cls):
+    #     # tearDownClass runs ONCE after all tests in this class.
+    #     print("=== [TestEmployee_WithSetup.tearDownClass] END CLASS FIXTURE ===")
+    #
+    # def setUp(self):
+    #     # setUp runs BEFORE EACH test method
+    #     print(f"\n[setUp] preparing fresh employees for: {self.id()}")
+    #     self.emp1 = Employee("Alice", "Smith", 60000)
+    #     self.emp2 = Employee("Bob", "Brown", 45000)
+    #
+    # def tearDown(self):
+    #     # tearDown runs AFTER EACH test method
+    #     print(f"[tearDown] cleaning up after: {self.id()}")
+    #     # If you had open files or patches, you would restore/close here.
+    #     del self.emp1
+    #     del self.emp2
+    #
+    # # ----- Tests below automatically get fresh emp1/emp2 each time -----
+    #
+    # def test_fullname_updates_when_names_change(self):
+    #     print("[test_fullname_updates_when_names_change] running")
+    #     self.assertEqual(self.emp1.fullname(), "Alice Smith")
+    #     # Scenario: user updates name; fullname should reflect latest state
+    #     self.emp1.firstname = "Alicia"
+    #     self.emp1.lastname = "Smyth"
+    #     self.assertEqual(self.emp1.fullname(), "Alicia Smyth")
+    #
+    # def test_email_reflects_current_names(self):
+    #     print("[test_email_reflects_current_names] running")
+    #     self.assertEqual(self.emp2.email(), "bob.brown@company.com")
+    #     # Scenario: after marriage, last name changes → email() should reflect
+    #     self.emp2.lastname = "Williams"
+    #     self.assertEqual(self.emp2.email(), "bob.williams@company.com")
+    #
+    # def test_apply_raise_uses_class_attribute_and_is_overridable(self):
+    #     print("[test_apply_raise_uses_class_attribute_and_is_overridable] running")
+    #     # Save original to restore later (important in shared test environments)
+    #     original_raise = Employee.salary_raise
+    #     # Use addCleanup to guarantee restoration even if the test fails halfway
+    #     self.addCleanup(lambda: setattr(Employee, "salary_raise", original_raise))
+    #
+    #     # Temporarily change the CLASS raise percentage for this test
+    #     Employee.salary_raise = 1.20  # 20% raise for this scenario
+    #     self.emp1.apply_raise()
+    #     self.assertEqual(self.emp1.salary, 72000.0)  # 60000 * 1.20
+    #
+    #     # Another employee should also honor the updated class attribute
+    #     self.emp2.apply_raise()
+    #     self.assertEqual(self.emp2.salary, 54000.0)  # 45000 * 1.20
 
 
 # --------------------------------------------------------------
 # C. setUpClass/tearDownClass with multiple tests to see order
 # --------------------------------------------------------------
-class TestEmployee_OrderAndVisibility(unittest.TestCase):
-    """This class exists to make execution order & prints obvious.
-    - setUpClass/tearDownClass wrap the entire class' run
-    - setUp/tearDown wrap each test
-    - Test methods run in alphabetical order by name by default
-      (CPython's unittest sorts test method names).
-    """
-
+# class TestEmployee_OrderAndVisibility(unittest.TestCase):
+#     """This class exists to make execution order & prints obvious.
+#     - setUpClass/tearDownClass wrap the entire class' run
+#     - setUp/tearDown wrap each test
+#     - Test methods run in alphabetical order by name by default
+#       (CPython's unittest sorts test method names).
+#     """
+#
     @classmethod
     def setUpClass(cls):
         print("\n=== [TestEmployee_OrderAndVisibility.setUpClass] ===")

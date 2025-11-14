@@ -1,0 +1,91 @@
+Pytest Terminologies (Super Simple Explanations)
+1. Test Function
+A normal Python function whose name starts with test_; pytest automatically runs it as a test.
+
+2. Fixture
+A reusable setup function that prepares something your test needs (data, mocks, objects).
+ It runs only when the test asks for it.
+
+3. Fixture Scope (function, class, module, session)
+Controls how often the fixture runs:
+function: before every test function
+class: once per test class
+module: once per test file
+session: once for the entire pytest run
+
+4. yield in a fixture
+Everything before yield = setup.
+ Everything after yield = teardown (runs after the test finishes).
+
+5. mocker fixture (from pytest-mock)
+A built-in fixture that gives you access to mocking tools (patch, MagicMock, spying, etc.) without writing boilerplate.
+
+6. mocker.patch()
+Replaces a real function/class with a fake one during the test.
+ Useful when:
+the real function does API calls
+sends emails
+touches the file system
+has side effects
+
+7. Monkeypatch (pytest built-in)
+A pure-pytest alternative to patching values (similar to mock.patch).
+ Used to temporarily change attributes, environment variables, or dict values.
+
+8. Mock / MagicMock
+A pretend object that acts like the original but:
+does nothing real
+records how it was used
+can return fake values
+Useful to test behavior without running real code.
+
+9. assert_called_once_with()
+Checks that a mocked method was called exactly once and with specific arguments.
+
+10. Parametrization (@pytest.mark.parametrize)
+Runs the same test function with multiple sets of inputs.
+ Equivalent to subTest in unittest.
+
+11. xfail (expected failure)
+Marks a test as “this is supposed to fail right now.”
+ If it fails → test suite stays green.
+ If it passes → marked as XPASS (unexpected pass).
+
+12. Skip / skipif
+Prevents a test from running (for unsupported OS, missing library, etc.).
+
+13. Test Discovery
+Pytest automatically finds tests based on:
+File names like test_*.py
+Function names starting with test_
+Class names starting with Test
+No need to register tests manually.
+
+14. Assertion rewriting
+Pytest improves your assert statements so failures show clear explanations (not just True/False).
+ Example:
+assert x == y
+
+shows:
+E   4 != 5
+
+
+15. Test Independence
+Each test must not depend on any other test.
+ Pytest tools (fixtures, mocks, scopes) help enforce this.
+
+Ultra-Short Cheat Sheet
+Test function: a function that starts with test_
+Fixture: reusable setup requested by name
+Fixture scope: how often the fixture runs
+Yield: separates setup and teardown
+mocker: helper for creating mocks/patches
+mocker.patch: replace real dependency with fake one
+Mock/MagicMock: pretend object that records calls
+assert_called_once_with: ensures correct mock usage
+parametrize: run same test with multiple inputs
+xfail: expected-to-fail test
+skip: do not run test
+discovery: pytest auto-finds test files/functions
+assert rewriting: better assert error messages
+independent tests: tests must not rely on each other
