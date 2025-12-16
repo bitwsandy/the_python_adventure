@@ -10,3 +10,5 @@ def get_user_name(user_id: int) -> str:
     """
     user = external_api.get_user(user_id)
     return user["name"]
+
+get_user_name(2)

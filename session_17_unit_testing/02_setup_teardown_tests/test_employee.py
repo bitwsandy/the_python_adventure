@@ -14,31 +14,30 @@
 import unittest
 from employee import Employee
 
-
 # --------------------------------------------------------------
 # A. Manual creation tests (no setUp/tearDown)
 # --------------------------------------------------------------
-# class TestEmployee_Manual(unittest.TestCase):
-#     """Manual construction per test (clear but repetitive).
-#     Use when each test needs bespoke setup different from others.
-#     """
-#
-#     def test_fullname_manual(self):
-#         print("\n[TestEmployee_Manual.test_fullname_manual] running")
-#         emp = Employee("Sandeep", "Patil", 50000)
-#         self.assertEqual(emp.fullname(), "Sandeep Patil")
-#
-#     def test_email_manual(self):
-#         print("\n[TestEmployee_Manual.test_email_manual] running")
-#         emp = Employee("Sandeep", "Patil", 50000)
-#         self.assertEqual(emp.email(), "sandeep.patil@company.com")
-#
-#     def test_apply_raise_manual(self):
-#         print("\n[TestEmployee_Manual.test_apply_raise_manual] running")
-#         emp = Employee("Sandeep", "Patil", 50000)
-#         # Default class raise = 1.10 (10%)
-#         emp.apply_raise()
-#         self.assertEqual(emp.salary, 55000.0)
+class TestEmployee_Manual(unittest.TestCase):
+    """Manual construction per test (clear but repetitive).
+    Use when each test needs bespoke setup different from others.
+    """
+
+    def test_fullname_manual(self):
+        print("\n[TestEmployee_Manual.test_fullname_manual] running")
+        emp = Employee("Sandeep", "Patil", 50000)
+        self.assertEqual(emp.fullname(), "Sandeep Patil")
+
+    def test_email_manual(self):
+        print("\n[TestEmployee_Manual.test_email_manual] running")
+        emp = Employee("Sandeep", "Patil", 50000)
+        self.assertEqual(emp.email(), "sandeep.patil@company.com")
+
+    def test_apply_raise_manual(self):
+        print("\n[TestEmployee_Manual.test_apply_raise_manual] running")
+        emp = Employee("Sandeep", "Patil", 50000)
+        # Default class raise = 1.10 (10%)
+        emp.apply_raise()
+        self.assertEqual(emp.salary, 55000.0)
 
 
 # --------------------------------------------------------------
