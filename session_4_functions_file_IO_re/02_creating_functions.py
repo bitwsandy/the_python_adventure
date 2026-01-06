@@ -1,6 +1,6 @@
 # Function with no parameters
 def greet():
-    """Prints a simple greeting message."""
+    """Prints a simple greeting message"""
     print("Hello, welcome!")
 
 # Function with one parameter

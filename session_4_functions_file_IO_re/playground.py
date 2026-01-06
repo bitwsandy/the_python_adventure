@@ -1,33 +1,15 @@
 
+# Named Functions
+def square(number):
+    return number * number
 
-# file = open(r"C:\Users\Sandeep\Desktop\data\wordcount.txt", 'r')
+print(square(5))
 
-# print(file.readline())
-# print(file.readline())
-# print(file.readline())
+pappu = square
 
-# print(file.readlines())
+print(pappu(10))
 
-# print(file.read())
-
-
-# file = open(r"C:\Users\Sandeep\Desktop\data\wordcount_demo.txt", 'a')
+# # Lambda Function
 #
-# content = """\nGood Night"""
-# file.write(content)
-#
-# file.close()
-
-with open(r"C:\Users\Sandeep\Desktop\data\wordcount_demo.txt", 'a') as file :
-    content = """\nGood Night"""
-    file.write(content)
-
-print("SUCCESS")
-
-
-
-
-
-
-
-
+square = lambda x : x * x
+print(square(5))

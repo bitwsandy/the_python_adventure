@@ -1,17 +1,12 @@
 
-correct_username = "admin"
-correct_password = "admin@123"
+# from 1 to 100 print all numbers except multiples of 3 and
+# skip all numbers after 70
 
-username = input("Enter your username: ")
-password = input("Enter your password: ")
-
-if username == correct_username or password == correct_password:
-    if username == correct_username :
-        if password == correct_password :
-            print("LOGIN SUCCESSFUL")
-        else:
-            print("INCORRECT PASSWORD")
+for num in range(1,101):
+    if num % 3 == 0:
+        continue
+    elif num > 70 :
+        break
     else:
-        print("INCORRECT USERNAME")
-else :
-    print("INCORRECT USERNAME AND PASSWORD")
+        print(num, end='\t')
+
