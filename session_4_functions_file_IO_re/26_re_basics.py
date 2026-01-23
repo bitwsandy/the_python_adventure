@@ -1,26 +1,35 @@
 import re
 
 text = """Alice was born on 1990-05-20 in New York.
-Bob's email is bob@example.com.
+Bob's email is bob@example.com +91 8888888888.
 The project deadline is approaching: 2024-07-31.
-John's phone numbers are 321-555-4321, 123.555.1234
+John's phone numbers are 321-555-4321,  321755574321, 123.555.1234
 , 123*555*1234
 , 800-555-1234
 , 900-555-1234.
+
++91 2555464554
+
 cat
 mat
 pat
 bat
-Mr. John
+Mr. John Patil
 Mr James
-Mr Sunder
+Mr. 123
+Mr Sunder$123
 Mr. Satya
 Ms Dibya
 Mrs. Ashwini
 Mr. A
+Mr1
+Mr. katappa
+
++91 7894561231
 
 emails = 
 thisIsSample@gmail.com
+john.cena@gmail.com
 IamStudent@university.edu
 my-117-business@my-work.net
 
@@ -30,8 +39,7 @@ https://youtube.com
 https://www.nasa.gov
 
 """
-sentence = 'Start a sentence and then bring it to an end'
-pattern = re.compile(r'at')
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
 matches = pattern.finditer(text)
 
 for match in matches :

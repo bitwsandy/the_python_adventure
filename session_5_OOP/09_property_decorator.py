@@ -9,9 +9,11 @@ class Employee :
 
     def print_details(self):
         print(self.firstname, self.lastname, self.age, self.cno, self.email)
+
     @property
     def fullname(self):
         return self.firstname+" "+self.lastname
+
     @fullname.setter
     def fullname(self, fullname): # John Shinde
         self.firstname = fullname.split(" ")[0]
@@ -28,6 +30,8 @@ class Employee :
 emp1 = Employee("John", "Wick", 33, 777, 'john.wick@company.com')
 
 emp1.print_details()
+
+print(emp1.fullname)
 
 emp1.fullname = "Bruce Patil"
 
