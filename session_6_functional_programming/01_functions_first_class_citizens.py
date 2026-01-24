@@ -191,7 +191,7 @@ def get_hello_function():
 # get_hello_function returns a function
 hello_fn = get_hello_function() # say_hello
 
-# hello_fn is now a function
+# hello_fn is now3 a function
 hello_fn()
 
 
