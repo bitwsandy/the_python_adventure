@@ -298,5 +298,94 @@ double_cached(5)
 double_cached(5)
 
 ######################################################################
+# PART 1 READING OUTER VARIABLE WORKS
+######################################################################
+
+def outer_read():
+    x = 10
+
+    def inner():
+        # Only reading outer variable
+        return x
+
+    return inner
+
+f = outer_read()
+print(f())  # Works fine
+
+
+######################################################################
+# PART 2 REASSIGNING OUTER VARIABLE FAILS WITHOUT NONLOCAL
+######################################################################
+
+def outer_reassign_fail():
+    x = 10
+
+    def inner():
+        # This line tries to create a NEW local x
+        # Python thinks x is local, so reading x before assignment causes error
+        # Uncomment to see error
+        # x = x + 1
+        # return x
+        pass
+
+    return inner
+
+# outer_reassign_fail()()  # Would cause error if inner was active
+
+
+######################################################################
+# PART 3 REASSIGNING WITH NONLOCAL WORKS
+######################################################################
+
+def outer_reassign_ok():
+    x = 10
+
+    def inner():
+        nonlocal x  # Tell Python to use outer x
+        x = x + 1   # Now we are rebinding outer variable
+        return x
+
+    return inner
+
+f = outer_reassign_ok()
+print(f())  # 11
+print(f())  # 12
+
+
+######################################################################
+# PART 4 MUTATING A DICTIONARY DOES NOT NEED NONLOCAL
+######################################################################
+
+def outer_mutation():
+    cache = {}  # Outer variable refers to a dictionary
+
+    def inner(key, value):
+        # We are NOT doing cache = something_new
+        # We are only modifying contents of the same dictionary
+        cache[key] = value
+        return cache
+
+    return inner
+
+f = outer_mutation()
+print(f("a", 1))  # {'a': 1}
+print(f("b", 2))  # {'a': 1, 'b': 2}
+
+
+######################################################################
+# PART 5 WHY THIS WORKS
+######################################################################
+
+# Variable name = label
+# Object = box
+
+# Rebinding:
+# cache = {}  -> replacing the box -> needs nonlocal
+
+# Mutation:
+# cache["x"] = 1 -> putting item inside same box -> no nonlocal needed
+
+######################################################################
 # END OF CLOSURE SCRIPT
 ######################################################################
