@@ -8,6 +8,29 @@ Why generators save memory
 
 Function that gives everything vs function that gives step by step
 """
+########### The Coffee machine #################
+def coffee_return(total_cups):
+    cups = []
+    for cup_no in range(1, total_cups + 1):
+        cups.append(f"Cup {cup_no} poured")
+    return cups
+
+# Equivalent Generator Code
+
+def coffee_generator(total_cups):
+    for cup_no in range(1, total_cups + 1):
+        yield f"Cup {cup_no} poured"
+
+machine = coffee_generator(3)
+
+print(next(machine))  # ask for 1 cup
+print(next(machine))  # ask for 1 more
+print(next(machine))  # ask again
+
+
+print(coffee_return(3))
+
+
 
 ######################################################################
 # SECTION 1 NORMAL FUNCTION
