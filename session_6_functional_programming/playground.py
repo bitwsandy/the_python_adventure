@@ -1,8 +1,32 @@
+# class MyIter :
+#     def __init__(self, start, end):
+#         self.start = start
+#         self.end = end
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):  # 1 to 20
+#         if self.start < self.end :
+#             val = self.start
+#             self.start += 1
+#             return val
+#         else:
+#             raise StopIteration
+#
+# itr = MyIter(1,20)
+#
+# for i in itr :
+#     print(i)
+#
 
-even_nums = [num for num in range(1,51) if num % 2 == 0]
-# print(even_nums)
 
-even_nums_generator = (num for num in range(1,51) if num % 2 == 0)
 
-for num in even_nums_generator:
-    print(num)
+def my_iter_gen(start, end):
+    for i in range(start, end):
+        yield i
+
+itr = my_iter_gen(1, 21)
+
+for i in itr :
+    print(i)
